@@ -19,8 +19,7 @@ const itemVariants = {
 };
 
 export function StatsPage() {
-  const { t, i18n } = useTranslation();
-  const isKorean = i18n.language === "ko" || i18n.language.startsWith("ko-");
+  const { t } = useTranslation();
   const [stats, setStats] = useState<Stats | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -42,19 +41,10 @@ export function StatsPage() {
   return (
     <>
       <Helmet>
-        <title>
-          {isKorean ? "동물상 통계 - 동물상 테스트" : "Animal Face Stats - Animal Face Test"}
-        </title>
-        <meta
-          name="description"
-          content={
-            isKorean
-              ? "동물상 테스트 결과 통계! 가장 많은 동물상은? 전체 분포를 확인해보세요."
-              : "Animal face test statistics! What's the most popular animal type? Check the full distribution."
-          }
-        />
-        <meta property="og:title" content={isKorean ? "동물상 통계" : "Animal Face Stats"} />
-        <meta property="og:description" content={isKorean ? "가장 인기있는 동물상은?" : "What's the most popular animal type?"} />
+        <title>{t("stats.statsTitle")}</title>
+        <meta name="description" content={t("stats.statsDescription")} />
+        <meta property="og:title" content={t("stats.statsOgTitle")} />
+        <meta property="og:description" content={t("stats.statsOgDescription")} />
         <meta name="twitter:card" content="summary" />
         <link rel="canonical" href="https://animal-face.quizlab.io/stats" />
       </Helmet>
@@ -106,7 +96,7 @@ export function StatsPage() {
                         <span className="text-3xl">{topAnimal.emoji}</span>
                         <div>
                           <p className="font-bold">
-                            {isKorean ? topAnimal.nameKo : topAnimal.nameEn}
+                            {t(`animals.${topAnimal.id}.name`)}
                           </p>
                           <Badge variant="secondary" className="text-xs mt-0.5">
                             {((topAnimal.count / stats.totalAnalyses) * 100).toFixed(1)}%
@@ -137,7 +127,7 @@ export function StatsPage() {
                           </span>
                           <span className="text-xl">{animal.emoji}</span>
                           <span className="w-20 text-xs font-medium truncate">
-                            {isKorean ? animal.nameKo : animal.nameEn}
+                            {t(`animals.${animal.id}.name`)}
                           </span>
                           <Progress
                             value={(animal.count / maxCount) * 100}

@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "stats": "Statistiken",
+    "title": "Tiergesicht-Test"
+  },
+  "home": {
+    "title": "Welchem Tier sehe ich ähnlich?",
+    "subtitle": "KI-gestützte Tiergesicht-Analyse",
+    "uploadButton": "Foto hochladen",
+    "cameraButton": "Selfie aufnehmen",
+    "privacyNotice": "Dein Foto wird nach der Analyse sofort gelöscht und wird niemals auf unseren Servern gespeichert."
+  },
+  "upload": {
+    "dragDrop": "Ziehe dein Foto hierher oder",
+    "or": "oder",
+    "selectFile": "Datei auswählen",
+    "maxSize": "Max. 10 MB, JPG/PNG werden unterstützt"
+  },
+  "analysis": {
+    "analyzing": "Analysiere...",
+    "detectingFace": "Gesicht wird erkannt",
+    "matchingAnimal": "Passendes Tier wird gesucht",
+    "almostDone": "Fast fertig!"
+  },
+  "result": {
+    "yourAnimal": "Dein Tier ist",
+    "matchRate": "Übereinstimmungsrate",
+    "personality": "Persönlichkeitsmerkmale",
+    "celebrities": "Promi-Übereinstimmungen",
+    "retake": "Test wiederholen",
+    "share": "Ergebnis teilen",
+    "shareText": "Ich bin ein {{animal}}! Welchem Tier siehst du ähnlich?"
+  },
+  "stats": {
+    "title": "Tiergesicht-Statistiken",
+    "totalTests": "Gesamte Tests",
+    "mostPopular": "Beliebtestes Tier",
+    "distribution": "Tierverteilung",
+    "statsTitle": "Statistiken - Tiergesicht-Test",
+    "statsDescription": "Statistiken des Tiergesicht-Tests! Was ist das beliebteste Tier? Prüfe die vollständige Verteilung.",
+    "statsOgTitle": "Tiergesicht-Statistiken",
+    "statsOgDescription": "Was ist das beliebteste Tier?"
+  },
+  "common": {
+    "loading": "Wird geladen...",
+    "error": "Ein Fehler ist aufgetreten",
+    "retry": "Erneut versuchen"
+  },
+  "footer": {
+    "title": "Tiergesicht-Test",
+    "copyright": "© 2025 Tiergesicht-Test. Hochgeladene Fotos werden nach der Analyse sofort gelöscht.",
+    "disclaimer": "Dieser Dienst verwendet KI-Analyse nur zu Unterhaltungszwecken."
+  },
+  "seo": {
+    "homeTitle": "Welchem Tier sehe ich ähnlich? - KI Tiergesicht-Test",
+    "homeDescription": "KI-gestützte Tiergesicht-Analyse! Lade dein Selfie hoch und entdecke, welchem der 12 Tiere du ähnlichst. Kostenloser Online-Test.",
+    "homeKeywords": "Tiergesicht-Test, welchem Tier sehe ich ähnlich, KI-Gesichtsanalyse, Gesichtsform-Test",
+    "ogTitle": "Welchem Tier sehe ich ähnlich? - KI Tiergesicht-Test",
+    "ogDescription": "Lade dein Selfie hoch und entdecke, welchem Tier du ähnlichst! Kostenloser KI-Test.",
+    "twitterTitle": "Welchem Tier sehe ich ähnlich?",
+    "twitterDescription": "KI Tiergesicht-Test!"
+  },
+  "animals": {
+    "dog": {
+      "name": "Hund",
+      "description": "Du strahlst warme, freundliche Energie aus, die alle entspannt! Du hast ein natürliches Talent dafür, Menschen ein gutes Gefühl zu geben. Deine treue und ergebene Persönlichkeit macht dich zu einer geliebten Präsenz in jeder Gruppe.",
+      "celebrities": ["Ryan Reynolds", "Jennifer Aniston", "Tom Hanks"]
+    },
+    "cat": {
+      "name": "Katze",
+      "description": "Unabhängig und geheimnisvoll charmant! Du bist unendlich liebevoll gegenüber denen, die du liebst, aber du brauchst Zeit, um dich neuen Menschen gegenüber zu öffnen. Dein scharfer Instinkt und deine elegante Präsenz machen dich unwiderstehlich faszinierend.",
+      "celebrities": ["Zendaya", "Timothée Chalamet", "Angelina Jolie"]
+    },
+    "fox": {
+      "name": "Fuchs",
+      "description": "Klug und magnetisch, du glänzt in jeder Situation! Du leitest die Atmosphäre mit deinen witzigen Worten und deinem scharfen Stilgefühl. Obwohl du nach außen cool wirkst, bist du eigentlich ein zutiefst sensibler Romantiker.",
+      "celebrities": ["Scarlett Johansson", "Chris Evans", "Megan Fox"]
+    },
+    "bear": {
+      "name": "Bär",
+      "description": "Stabil und warm, du verbreitest die gemütlichsten Schwingungen! Obwohl du nach außen stark wirkst, ist dein Herz wärmer und zarter als irgendjemand weiß. Menschen vertrauen dir natürlich ihre Geheimnisse an.",
+      "celebrities": ["Dwayne Johnson", "Sandra Bullock", "Chris Hemsworth"]
+    },
+    "rabbit": {
+      "name": "Hase",
+      "description": "Du strahlst entzückenden, reinen Charme aus! Deine schnellen Reflexe und grenzenlose Neugier halten dich immer am Erkunden neuer Dinge. Süß nach außen, aber mit einem überraschend widerstandsfähigen Geist, der alle überrascht.",
+      "celebrities": ["Ariana Grande", "Harry Styles", "Selena Gomez"]
+    },
+    "deer": {
+      "name": "Hirsch",
+      "description": "Deine klare, unschuldige Schönheit gewinnt alle, die dir begegnen. Du hast außergewöhnliche Sensibilität und künstlerisches Talent und bist ein echter Romantiker, der die Natur, Musik und Literatur liebt.",
+      "celebrities": ["Taylor Swift", "Shawn Mendes", "Emma Watson"]
+    },
+    "hamster": {
+      "name": "Hamster",
+      "description": "Allein dein Anblick mit deinen pausbäckigen Wangen lässt alle lächeln! Du bist der fleißige und sorgfältige Typ, der in den kleinsten Dingen Glück findet. Deine übersprudelnde positive Energie ist unwiderstehlich.",
+      "celebrities": ["Billie Eilish", "Jung Kook", "Olivia Rodrigo"]
+    },
+    "wolf": {
+      "name": "Wolf",
+      "description": "Du hast Charisma und einen intensiven Blick, der Aufmerksamkeit fordert! Du hast eine starke, ausgeprägte Weltanschauung und unerschütterliche Überzeugungen. Ein geborener Rudel-Anführer, du knüpfst tiefe, bedeutungsvolle Bindungen mit den Wenigen, die du wirklich an dich heran lässt.",
+      "celebrities": ["Keanu Reeves", "Cate Blanchett", "Oscar Isaac"]
+    },
+    "penguin": {
+      "name": "Pinguin",
+      "description": "Süß und unglaublich witzig, du bist die Seele jeder Party! Obwohl du nach außen komisch wirkst, bist du innerlich unglaublich fleißig und verantwortungsbewusst. Einmal committed, kennt deine Hingabe keine Grenzen.",
+      "celebrities": ["Kevin Hart", "Rebel Wilson", "Jack Black"]
+    },
+    "owl": {
+      "name": "Eule",
+      "description": "Dein tiefer Blick und deine intellektuelle Aura machen dich unvergesslich. Mit bemerkenswerter Beobachtungsgabe und scharfsinniger Einsicht drückst du dich durch Taten aus, nicht durch Worte. Du lebst nachts wirklich auf.",
+      "celebrities": ["Benedict Cumberbatch", "Natalie Portman", "Joaquin Phoenix"]
+    },
+    "squirrel": {
+      "name": "Eichhörnchen",
+      "description": "Energiegeladen und immer in Bewegung, du interessierst dich für alles! Du bist bemerkenswert vorbereitet und einfallsreich. Dein süßes Aussehen kombiniert mit einem überraschend schnellen Denkvermögen ist dein ultimativer Charme.",
+      "celebrities": ["Zooey Deschanel", "Michael B. Jordan", "Florence Pugh"]
+    },
+    "dinosaur": {
+      "name": "Dinosaurier",
+      "description": "Einzigartig individuell, deine Präsenz ist schlicht überwältigend! Du hast einen unverwechselbaren Stil ganz eigener Art, der sich nie vor Trends beugt. Du magst anfangs ungewöhnlich wirken, aber je mehr Menschen dich kennenlernen, desto mehr werden sie von deinem Charme süchtig.",
+      "celebrities": ["Lady Gaga", "Kanye West", "Björk"]
+    }
+  }
+}

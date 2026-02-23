@@ -42,8 +42,7 @@ const itemVariants = {
 };
 
 export function ResultCard({ result, previewUrl }: ResultCardProps) {
-  const { t, i18n } = useTranslation();
-  const isKorean = i18n.language === "ko" || i18n.language.startsWith("ko-");
+  const { t } = useTranslation();
   const animalInfo = animals.find((a) => a.id === result.topAnimal);
   const topMatch = result.matches.find((m) => m.id === result.topAnimal);
   const topPct = topMatch?.percentage ?? 0;
@@ -97,7 +96,7 @@ export function ResultCard({ result, previewUrl }: ResultCardProps) {
                   <span className="text-4xl">{animalInfo.emoji}</span>
                 )}
                 <CardTitle className="text-2xl font-bold">
-                  {isKorean ? animalInfo.nameKo : animalInfo.nameEn}
+                  {t(`animals.${animalInfo.id}.name`)}
                 </CardTitle>
               </div>
             </motion.div>
@@ -132,7 +131,7 @@ export function ResultCard({ result, previewUrl }: ResultCardProps) {
                     <div key={match.id} className="flex items-center gap-2">
                       <span className="text-lg">{match.emoji}</span>
                       <span className="w-20 text-xs font-medium truncate">
-                        {isKorean ? (info?.nameKo ?? match.name) : (info?.nameEn ?? match.name)}
+                        {t(`animals.${match.id}.name`)}
                       </span>
                       <Progress
                         value={match.percentage}
@@ -157,7 +156,7 @@ export function ResultCard({ result, previewUrl }: ResultCardProps) {
                 {t("result.personality")}
               </h3>
               <p className="text-sm leading-relaxed text-foreground/80">
-                {isKorean ? animalInfo.descriptionKo : animalInfo.descriptionEn}
+                {t(`animals.${animalInfo.id}.description`)}
               </p>
             </motion.div>
 
@@ -166,7 +165,7 @@ export function ResultCard({ result, previewUrl }: ResultCardProps) {
                 {t("result.celebrities")}
               </h3>
               <div className="flex flex-wrap gap-2">
-                {(isKorean ? animalInfo.celebritiesKo : animalInfo.celebritiesEn).map(
+                {(t(`animals.${animalInfo.id}.celebrities`, { returnObjects: true }) as string[]).map(
                   (celebrity) => (
                     <Badge
                       key={celebrity}

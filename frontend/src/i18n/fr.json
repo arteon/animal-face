@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "stats": "Statistiques",
+    "title": "Test de Visage Animal"
+  },
+  "home": {
+    "title": "À quel animal est-ce que je ressemble ?",
+    "subtitle": "Analyse de votre type de visage animal par IA",
+    "uploadButton": "Télécharger une photo",
+    "cameraButton": "Prendre un selfie",
+    "privacyNotice": "Votre photo est supprimée immédiatement après l'analyse et n'est jamais stockée sur nos serveurs."
+  },
+  "upload": {
+    "dragDrop": "Faites glisser votre photo ici, ou",
+    "or": "ou",
+    "selectFile": "Sélectionner un fichier",
+    "maxSize": "Max 10 Mo, JPG/PNG pris en charge"
+  },
+  "analysis": {
+    "analyzing": "Analyse en cours...",
+    "detectingFace": "Détection de votre visage",
+    "matchingAnimal": "Recherche de votre animal correspondant",
+    "almostDone": "Presque terminé !"
+  },
+  "result": {
+    "yourAnimal": "Votre animal est",
+    "matchRate": "Taux de correspondance",
+    "personality": "Traits de personnalité",
+    "celebrities": "Célébrités similaires",
+    "retake": "Refaire le test",
+    "share": "Partager votre résultat",
+    "shareText": "Je suis un {{animal}} ! À quel animal ressemblez-vous ?"
+  },
+  "stats": {
+    "title": "Statistiques des visages animaux",
+    "totalTests": "Total des tests",
+    "mostPopular": "Animal le plus populaire",
+    "distribution": "Distribution des animaux",
+    "statsTitle": "Statistiques - Test de Visage Animal",
+    "statsDescription": "Statistiques du test de visage animal ! Quel est le type d'animal le plus populaire ? Consultez la distribution complète.",
+    "statsOgTitle": "Statistiques de Visage Animal",
+    "statsOgDescription": "Quel est le type d'animal le plus populaire ?"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "retry": "Réessayer"
+  },
+  "footer": {
+    "title": "Test de Visage Animal",
+    "copyright": "© 2025 Test de Visage Animal. Les photos téléchargées sont supprimées immédiatement après l'analyse.",
+    "disclaimer": "Ce service utilise l'analyse IA à des fins de divertissement uniquement."
+  },
+  "seo": {
+    "homeTitle": "À quel animal est-ce que je ressemble ? - Test de Visage Animal IA",
+    "homeDescription": "Analyse de visage animal par IA ! Téléchargez votre selfie et découvrez lequel des 12 animaux vous ressemblez. Test en ligne gratuit.",
+    "homeKeywords": "test de visage animal, à quel animal je ressemble, analyse de visage IA, test de forme du visage",
+    "ogTitle": "À quel animal est-ce que je ressemble ? - Test de Visage Animal IA",
+    "ogDescription": "Téléchargez votre selfie et découvrez à quel animal vous ressemblez ! Test IA gratuit.",
+    "twitterTitle": "À quel animal est-ce que je ressemble ?",
+    "twitterDescription": "Test de visage animal par IA !"
+  },
+  "animals": {
+    "dog": {
+      "name": "Chien",
+      "description": "Vous rayonnez d'une énergie chaleureuse et amicale qui met tout le monde à l'aise ! Vous avez un don naturel pour faire en sorte que les gens se sentent bien. Votre personnalité loyale et dévouée fait de vous une présence très appréciée.",
+      "celebrities": ["Ryan Reynolds", "Jennifer Aniston", "Tom Hanks"]
+    },
+    "cat": {
+      "name": "Chat",
+      "description": "Indépendant(e) et mystérieusement charmant(e) ! Vous êtes infiniment affectueux/se envers ceux que vous aimez, mais vous prenez le temps de vous ouvrir aux nouvelles personnes. Votre instinct aiguisé et votre présence gracieuse vous rendent irrésistiblement intrigant(e).",
+      "celebrities": ["Zendaya", "Timothée Chalamet", "Angelina Jolie"]
+    },
+    "fox": {
+      "name": "Renard",
+      "description": "Intelligent(e) et magnétique, vous brillez dans n'importe quelle situation ! Vous dirigez l'atmosphère avec vos mots pleins d'esprit et votre sens du style affûté. Bien que vous sembliez cool en apparence, vous êtes en réalité un(e) romantique profondément sensible.",
+      "celebrities": ["Scarlett Johansson", "Chris Evans", "Marion Cotillard"]
+    },
+    "bear": {
+      "name": "Ours",
+      "description": "Solide et chaleureux/se, vous dégagez les vibrations les plus réconfortantes ! Bien que vous sembliez fort(e) en apparence, votre cœur est plus chaud et plus tendre que quiconque ne le sait. Les gens veulent naturellement vous confier leurs secrets.",
+      "celebrities": ["Dwayne Johnson", "Sandra Bullock", "Chris Hemsworth"]
+    },
+    "rabbit": {
+      "name": "Lapin",
+      "description": "Vous débordez d'un charme adorable et pur ! Vos réflexes rapides et votre curiosité sans limites vous poussent toujours à explorer quelque chose de nouveau. Mignon(ne) en apparence, mais avec un esprit étonnamment résilient qui surprend tout le monde.",
+      "celebrities": ["Ariana Grande", "Harry Styles", "Selena Gomez"]
+    },
+    "deer": {
+      "name": "Cerf",
+      "description": "Votre beauté claire et innocente conquiert tous ceux que vous rencontrez. Vous avez une sensibilité exceptionnelle et un talent artistique, et vous êtes un(e) vrai(e) romantique qui aime la nature, la musique et la littérature.",
+      "celebrities": ["Taylor Swift", "Shawn Mendes", "Emma Watson"]
+    },
+    "hamster": {
+      "name": "Hamster",
+      "description": "Rien que vous voir avec vos joues dodues et adorables fait sourire tout le monde ! Vous êtes du type travailleur et diligent qui trouve le bonheur dans les plus petites choses. Votre énergie positive débordante est irrésistible.",
+      "celebrities": ["Billie Eilish", "Jung Kook", "Olivia Rodrigo"]
+    },
+    "wolf": {
+      "name": "Loup",
+      "description": "Vous avez du charisme et un regard intense qui commande l'attention ! Vous avez une vision du monde forte et distincte et des convictions inébranlables. Leader naturel du groupe, vous formez des liens profonds et significatifs avec les rares personnes que vous laissez vraiment entrer.",
+      "celebrities": ["Keanu Reeves", "Cate Blanchett", "Oscar Isaac"]
+    },
+    "penguin": {
+      "name": "Pingouin",
+      "description": "Mignon(ne) et hilarant(e), vous êtes l'âme de toute fête ! Bien que vous sembliez comique en apparence, vous êtes incroyablement diligent(e) et responsable à l'intérieur. Une fois que vous vous engagez, votre dévouement ne connaît pas de limites.",
+      "celebrities": ["Kevin Hart", "Rebel Wilson", "Jack Black"]
+    },
+    "owl": {
+      "name": "Hibou",
+      "description": "Votre regard profond et votre aura intellectuelle vous rendent inoubliable. Avec des compétences d'observation remarquables et une perspicacité aiguisée, vous vous exprimez par des actions plutôt que par des mots. Vous vous épanouissez vraiment la nuit.",
+      "celebrities": ["Benedict Cumberbatch", "Natalie Portman", "Joaquin Phoenix"]
+    },
+    "squirrel": {
+      "name": "Écureuil",
+      "description": "Énergique et toujours en mouvement, vous vous intéressez à tout ! Vous êtes remarquablement préparé(e) et ingénieux/se. Votre apparence adorable associée à un esprit étonnamment vif est votre point de charme ultime.",
+      "celebrities": ["Zooey Deschanel", "Michael B. Jordan", "Florence Pugh"]
+    },
+    "dinosaur": {
+      "name": "Dinosaure",
+      "description": "Unique et individuel(le), votre présence est tout simplement écrasante ! Vous avez un style distinctif qui ne s'incline jamais devant les tendances. Vous pourriez sembler inhabituel(le) au début, mais plus les gens vous connaissent, plus vous devenez addictivment charmant(e).",
+      "celebrities": ["Lady Gaga", "Kanye West", "Björk"]
+    }
+  }
+}

@@ -9,7 +9,6 @@ import {
 } from "react-share";
 import { Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { animals } from "@/data/animals";
 
 interface ShareButtonsProps {
   topAnimalId: string;
@@ -18,12 +17,10 @@ interface ShareButtonsProps {
 const SHARE_URL = typeof window !== "undefined" ? window.location.href : "https://animal-face-test.com";
 
 export function ShareButtons({ topAnimalId }: ShareButtonsProps) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
-  const isKorean = i18n.language === "ko" || i18n.language.startsWith("ko-");
 
-  const animalInfo = animals.find((a) => a.id === topAnimalId);
-  const animalName = isKorean ? (animalInfo?.nameKo ?? "") : (animalInfo?.nameEn ?? "");
+  const animalName = t(`animals.${topAnimalId}.name`);
   const shareText = t("result.shareText", { animal: animalName });
 
   const handleCopy = async () => {

@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "stats": "Statistik",
+    "title": "Tes Wajah Hewan"
+  },
+  "home": {
+    "title": "Aku mirip hewan apa?",
+    "subtitle": "Analisis tipe wajah hewan dengan AI",
+    "uploadButton": "Unggah Foto",
+    "cameraButton": "Ambil Selfie",
+    "privacyNotice": "Foto Anda dihapus segera setelah analisis dan tidak pernah disimpan di server kami."
+  },
+  "upload": {
+    "dragDrop": "Seret foto ke sini, atau",
+    "or": "atau",
+    "selectFile": "Pilih File",
+    "maxSize": "Maks. 10MB, JPG/PNG didukung"
+  },
+  "analysis": {
+    "analyzing": "Menganalisis...",
+    "detectingFace": "Mendeteksi wajah Anda",
+    "matchingAnimal": "Mencari hewan yang cocok",
+    "almostDone": "Hampir selesai!"
+  },
+  "result": {
+    "yourAnimal": "Hewan Anda adalah",
+    "matchRate": "Tingkat kecocokan",
+    "personality": "Sifat kepribadian",
+    "celebrities": "Selebriti yang mirip",
+    "retake": "Tes ulang",
+    "share": "Bagikan hasil",
+    "shareText": "Aku mirip {{animal}}! Kamu mirip hewan apa?"
+  },
+  "stats": {
+    "title": "Statistik Wajah Hewan",
+    "totalTests": "Total Tes",
+    "mostPopular": "Hewan paling populer",
+    "distribution": "Distribusi hewan",
+    "statsTitle": "Statistik - Tes Wajah Hewan",
+    "statsDescription": "Statistik tes wajah hewan! Apa tipe hewan paling populer? Cek distribusi lengkapnya.",
+    "statsOgTitle": "Statistik Wajah Hewan",
+    "statsOgDescription": "Apa tipe hewan paling populer?"
+  },
+  "common": {
+    "loading": "Memuat...",
+    "error": "Terjadi kesalahan",
+    "retry": "Coba lagi"
+  },
+  "footer": {
+    "title": "Tes Wajah Hewan",
+    "copyright": "© 2025 Tes Wajah Hewan. Foto yang diunggah dihapus segera setelah analisis.",
+    "disclaimer": "Layanan ini menggunakan analisis AI hanya untuk tujuan hiburan."
+  },
+  "seo": {
+    "homeTitle": "Aku mirip hewan apa? - Tes Wajah Hewan AI",
+    "homeDescription": "Analisis wajah hewan dengan AI! Unggah selfie dan temukan kamu mirip hewan mana dari 12 jenis. Tes online gratis.",
+    "homeKeywords": "tes wajah hewan, aku mirip hewan apa, analisis wajah AI, tes bentuk wajah",
+    "ogTitle": "Aku mirip hewan apa? - Tes Wajah Hewan AI",
+    "ogDescription": "Unggah selfie dan temukan kamu mirip hewan apa! Tes AI gratis.",
+    "twitterTitle": "Aku mirip hewan apa?",
+    "twitterDescription": "Tes wajah hewan AI!"
+  },
+  "animals": {
+    "dog": {
+      "name": "Anjing",
+      "description": "Kamu memancarkan energi hangat dan ramah yang membuat semua orang merasa nyaman! Kamu memiliki bakat alami untuk membuat orang merasa betah. Kepribadianmu yang setia dan berdedikasi menjadikanmu sosok yang dicintai di kelompok mana pun.",
+      "celebrities": ["Ryan Reynolds", "Jennifer Aniston", "Tom Hanks"]
+    },
+    "cat": {
+      "name": "Kucing",
+      "description": "Mandiri dan misterius namun menawan! Kamu sangat penyayang kepada orang-orang yang kamu cintai tetapi butuh waktu untuk terbuka kepada orang baru. Instingmu yang tajam dan kehadiranmu yang anggun membuatmu memikat secara tak tertahankan.",
+      "celebrities": ["Zendaya", "Timothée Chalamet", "Angelina Jolie"]
+    },
+    "fox": {
+      "name": "Rubah",
+      "description": "Cerdas dan magnetis, kamu bersinar dalam situasi apa pun! Kamu memimpin suasana dengan kata-kata cerdas dan rasa gaya yang tajam. Meski tampak dingin di luar, sebenarnya kamu adalah seorang romantis yang sangat sensitif.",
+      "celebrities": ["Scarlett Johansson", "Chris Evans", "Megan Fox"]
+    },
+    "bear": {
+      "name": "Beruang",
+      "description": "Kokoh dan hangat, kamu memancarkan getaran paling menenangkan! Meski tampak kuat di luar, hatimu lebih hangat dan lembut dari yang siapa pun tahu. Orang-orang secara alami ingin berbagi rahasia dengan sifatmu yang dapat dipercaya.",
+      "celebrities": ["Dwayne Johnson", "Sandra Bullock", "Chris Hemsworth"]
+    },
+    "rabbit": {
+      "name": "Kelinci",
+      "description": "Kamu meluap dengan pesona yang menggemaskan dan murni! Refleks cepat dan rasa ingin tahu yang tak terbatas membuatmu selalu menjelajahi hal baru. Menggemaskan di luar, tetapi dengan semangat yang mengejutkan tangguh yang membuat semua orang terkejut.",
+      "celebrities": ["Ariana Grande", "Harry Styles", "Selena Gomez"]
+    },
+    "deer": {
+      "name": "Rusa",
+      "description": "Kecantikanmu yang jernih dan polos memenangkan semua orang yang kamu temui. Kamu memiliki kepekaan luar biasa dan bakat artistik, dan kamu adalah seorang romantis sejati yang mencintai alam, musik, dan sastra.",
+      "celebrities": ["Taylor Swift", "Shawn Mendes", "Emma Watson"]
+    },
+    "hamster": {
+      "name": "Hamster",
+      "description": "Hanya melihatmu dengan pipi chubby yang menggemaskan membuat semua orang tersenyum! Kamu tipe yang rajin dan teliti yang menemukan kebahagiaan dalam hal-hal terkecil. Energi positifmu yang meluap-luap sungguh tak tertahankan.",
+      "celebrities": ["Billie Eilish", "Jung Kook", "Olivia Rodrigo"]
+    },
+    "wolf": {
+      "name": "Serigala",
+      "description": "Kamu memiliki karisma dan tatapan intens yang menuntut perhatian! Kamu memiliki pandangan dunia yang kuat dan berbeda serta keyakinan yang tak tergoyahkan. Pemimpin kawanan alami, kamu membentuk ikatan yang dalam dan bermakna dengan segelintir orang yang benar-benar kamu biarkan masuk.",
+      "celebrities": ["Keanu Reeves", "Cate Blanchett", "Oscar Isaac"]
+    },
+    "penguin": {
+      "name": "Penguin",
+      "description": "Menggemaskan dan sangat lucu, kamu adalah jiwa dari setiap pesta! Meski tampak komik di luar, di dalam kamu sangat rajin dan bertanggung jawab. Begitu kamu berkomitmen pada seseorang atau sesuatu, pengabdianmu tidak mengenal batas.",
+      "celebrities": ["Kevin Hart", "Rebel Wilson", "Jack Black"]
+    },
+    "owl": {
+      "name": "Burung Hantu",
+      "description": "Tatapanmu yang dalam dan aura intelektualmu membuatmu tak terlupakan. Dengan keterampilan observasi yang luar biasa dan wawasan yang tajam, kamu mengekspresikan diri melalui tindakan daripada kata-kata. Kamu benar-benar hidup di malam hari.",
+      "celebrities": ["Benedict Cumberbatch", "Natalie Portman", "Joaquin Phoenix"]
+    },
+    "squirrel": {
+      "name": "Tupai",
+      "description": "Energik dan selalu bergerak, kamu tertarik pada segalanya! Kamu sangat siap dan penuh akal. Penampilanmu yang menggemaskan dipadukan dengan pikiran yang mengejutkan cepat adalah poin pesona utimamu.",
+      "celebrities": ["Zooey Deschanel", "Michael B. Jordan", "Florence Pugh"]
+    },
+    "dinosaur": {
+      "name": "Dinosaurus",
+      "description": "Unik dan individual, kehadiranmu sungguh luar biasa! Kamu memiliki gaya khas yang tidak pernah tunduk pada tren. Kamu mungkin tampak tidak biasa pada awalnya, tetapi semakin orang mengenalmu, semakin mereka terpesona oleh pesonamu yang adiktif.",
+      "celebrities": ["Lady Gaga", "Kanye West", "Björk"]
+    }
+  }
+}

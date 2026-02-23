@@ -33,12 +33,12 @@ function generateMockResult(): AnalysisResult {
   const baseRest = Math.floor(remaining / restCount);
 
   const matches: AnimalMatch[] = [
-    { id: top.id, name: top.nameKo, emoji: top.emoji, percentage: topPct },
-    { id: second.id, name: second.nameKo, emoji: second.emoji, percentage: secondPct },
-    { id: third.id, name: third.nameKo, emoji: third.emoji, percentage: thirdPct },
+    { id: top.id, name: top.id, emoji: top.emoji, percentage: topPct },
+    { id: second.id, name: second.id, emoji: second.emoji, percentage: secondPct },
+    { id: third.id, name: third.id, emoji: third.emoji, percentage: thirdPct },
     ...shuffled.slice(3).map((a, i) => ({
       id: a.id,
-      name: a.nameKo,
+      name: a.id,
       emoji: a.emoji,
       percentage: i === restCount - 1 ? remaining - baseRest * (restCount - 1) : baseRest,
     })),

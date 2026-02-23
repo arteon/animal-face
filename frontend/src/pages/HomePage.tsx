@@ -36,49 +36,23 @@ function FloatingEmoji({ emoji, index }: { emoji: string; index: number }) {
 }
 
 export function HomePage() {
-  const { t, i18n } = useTranslation();
-  const isKorean = i18n.language === "ko" || i18n.language.startsWith("ko-");
+  const { t } = useTranslation();
   const { status, result, error, previewUrl, analyze, reset } = useAnalysis();
 
   return (
     <>
       <Helmet>
-        <title>
-          {isKorean
-            ? "나는 어떤 동물상? - AI 동물상 테스트"
-            : "What Animal Do I Look Like? - AI Animal Face Test"}
-        </title>
-        <meta
-          name="description"
-          content={
-            isKorean
-              ? "AI가 분석하는 나의 동물 얼굴형! 셀카 한 장으로 나와 닮은 동물을 찾아보세요. 강아지, 고양이, 여우 등 12가지 동물상 테스트."
-              : "AI-powered animal face shape analysis! Upload your selfie and discover which of 12 animals you look like. Free online test."
-          }
-        />
-        <meta
-          name="keywords"
-          content={
-            isKorean
-              ? "동물상 테스트, 동물 닮은꼴, AI 얼굴 분석, 관상 테스트, 동물상"
-              : "animal face test, what animal do I look like, animal look alike, face shape test, AI face analysis"
-          }
-        />
-        <meta property="og:title" content={isKorean ? "나는 어떤 동물상? - AI 동물상 테스트" : "What Animal Do I Look Like? - AI Animal Face Test"} />
-        <meta
-          property="og:description"
-          content={
-            isKorean
-              ? "AI가 분석하는 나의 동물 얼굴형! 셀카 한 장으로 나와 닮은 동물을 찾아보세요."
-              : "Upload your selfie and discover which animal you look like! Free AI-powered test."
-          }
-        />
+        <title>{t("seo.homeTitle")}</title>
+        <meta name="description" content={t("seo.homeDescription")} />
+        <meta name="keywords" content={t("seo.homeKeywords")} />
+        <meta property="og:title" content={t("seo.ogTitle")} />
+        <meta property="og:description" content={t("seo.ogDescription")} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://animal-face.quizlab.io/og-image.png" />
         <meta property="og:url" content="https://animal-face.quizlab.io/" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={isKorean ? "나는 어떤 동물상?" : "What Animal Do I Look Like?"} />
-        <meta name="twitter:description" content={isKorean ? "AI가 분석하는 나의 동물 얼굴형!" : "AI-powered animal face test!"} />
+        <meta name="twitter:title" content={t("seo.twitterTitle")} />
+        <meta name="twitter:description" content={t("seo.twitterDescription")} />
         <meta name="twitter:image" content="https://animal-face.quizlab.io/og-image.png" />
         <link rel="canonical" href="https://animal-face.quizlab.io/" />
       </Helmet>

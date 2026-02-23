@@ -36,11 +36,91 @@
     "title": "Animal Face Statistics",
     "totalTests": "Total Tests",
     "mostPopular": "Most Popular Animal",
-    "distribution": "Animal Distribution"
+    "distribution": "Animal Distribution",
+    "statsTitle": "Animal Face Stats - Animal Face Test",
+    "statsDescription": "Animal face test statistics! What's the most popular animal type? Check the full distribution.",
+    "statsOgTitle": "Animal Face Stats",
+    "statsOgDescription": "What's the most popular animal type?"
   },
   "common": {
     "loading": "Loading...",
     "error": "An error occurred",
     "retry": "Try Again"
+  },
+  "footer": {
+    "title": "Animal Face Test",
+    "copyright": "© 2025 Animal Face Test. Uploaded photos are deleted immediately after analysis.",
+    "disclaimer": "This service uses AI analysis for entertainment purposes only."
+  },
+  "seo": {
+    "homeTitle": "What Animal Do I Look Like? - AI Animal Face Test",
+    "homeDescription": "AI-powered animal face shape analysis! Upload your selfie and discover which of 12 animals you look like. Free online test.",
+    "homeKeywords": "animal face test, what animal do I look like, animal look alike, face shape test, AI face analysis",
+    "ogTitle": "What Animal Do I Look Like? - AI Animal Face Test",
+    "ogDescription": "Upload your selfie and discover which animal you look like! Free AI-powered test.",
+    "twitterTitle": "What Animal Do I Look Like?",
+    "twitterDescription": "AI-powered animal face test!"
+  },
+  "animals": {
+    "dog": {
+      "name": "Dog",
+      "description": "You radiate warm, friendly energy that puts everyone at ease! You have a natural gift for making people feel comfortable. Your loyal and devoted personality makes you a beloved presence in any group.",
+      "celebrities": ["Ryan Reynolds", "Jennifer Aniston", "Tom Hanks"]
+    },
+    "cat": {
+      "name": "Cat",
+      "description": "Independent and mysteriously charming! You're endlessly affectionate to those you love but take time to open up to new people. Your sharp instincts and graceful presence make you irresistibly intriguing.",
+      "celebrities": ["Zendaya", "Timothée Chalamet", "Angelina Jolie"]
+    },
+    "fox": {
+      "name": "Fox",
+      "description": "Clever and magnetic, you shine in any situation! You lead the atmosphere with your witty words and sharp sense of style. Though you appear cool on the outside, you're actually a deeply sensitive romantic.",
+      "celebrities": ["Scarlett Johansson", "Chris Evans", "Megan Fox"]
+    },
+    "bear": {
+      "name": "Bear",
+      "description": "Sturdy and warm, you give off the most comforting vibes! Though you appear strong on the outside, your heart is warmer and more tender than anyone knows. People naturally want to confide in your reliable, trustworthy nature.",
+      "celebrities": ["Dwayne Johnson", "Sandra Bullock", "Chris Hemsworth"]
+    },
+    "rabbit": {
+      "name": "Rabbit",
+      "description": "You overflow with adorable, pure charm! Your quick reflexes and boundless curiosity keep you always exploring something new. Cute on the outside, but with a surprisingly resilient spirit and stubborn streak that catches everyone off guard.",
+      "celebrities": ["Ariana Grande", "Harry Styles", "Selena Gomez"]
+    },
+    "deer": {
+      "name": "Deer",
+      "description": "Your clear, innocent beauty wins over everyone you meet. You have exceptional sensitivity and artistic flair, and you're a true romantic who loves nature, music, and literature. Shy at first, but unexpectedly quirky and adorable once comfortable.",
+      "celebrities": ["Taylor Swift", "Shawn Mendes", "Emma Watson"]
+    },
+    "hamster": {
+      "name": "Hamster",
+      "description": "Just looking at your chubby cheeked cuteness makes everyone smile! You're a hardworking, diligent type who finds happiness in the smallest things. Your overflowing positive energy and adorable obsessions over things you love are irresistible.",
+      "celebrities": ["Billie Eilish", "Jung Kook", "Olivia Rodrigo"]
+    },
+    "wolf": {
+      "name": "Wolf",
+      "description": "You have charisma and an intense gaze that commands attention! You have a strong, distinct worldview and unshakeable convictions. A natural leader of the pack, you form deep, meaningful bonds with the select few you truly let in.",
+      "celebrities": ["Keanu Reeves", "Cate Blanchett", "Oscar Isaac"]
+    },
+    "penguin": {
+      "name": "Penguin",
+      "description": "Cute and hilariously funny, you're the life of any party! Though you seem comedic on the outside, inside you're incredibly diligent and responsible. Once you commit to someone or something, your devotion knows no bounds.",
+      "celebrities": ["Kevin Hart", "Rebel Wilson", "Jack Black"]
+    },
+    "owl": {
+      "name": "Owl",
+      "description": "Your deep gaze and intellectual aura make you unforgettable. With remarkable observation skills and sharp insight, you express yourself through actions more than words. You truly come alive at night, a quintessential night owl.",
+      "celebrities": ["Benedict Cumberbatch", "Natalie Portman", "Joaquin Phoenix"]
+    },
+    "squirrel": {
+      "name": "Squirrel",
+      "description": "Energetic and always on the move, you're interested in everything! You're remarkably prepared and resourceful. Your cute appearance paired with a surprisingly quick-thinking mind is your ultimate charm point.",
+      "celebrities": ["Zooey Deschanel", "Michael B. Jordan", "Florence Pugh"]
+    },
+    "dinosaur": {
+      "name": "Dinosaur",
+      "description": "Uniquely individual, your presence is simply overwhelming! You have a distinctive style all your own that never bows to trends. You might seem unusual at first, but the more people get to know you, the more addictively charming you become.",
+      "celebrities": ["Lady Gaga", "Kanye West", "Björk"]
+    }
   }
 }

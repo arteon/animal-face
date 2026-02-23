@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { LanguageToggle } from "./LanguageToggle";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
   const { t } = useTranslation();
@@ -35,8 +36,9 @@ export function Header() {
               <Link to={link.to}>{link.label}</Link>
             </Button>
           ))}
-          <div className="ml-2">
+          <div className="ml-2 flex items-center gap-1.5">
             <LanguageToggle />
+            <ThemeToggle />
           </div>
         </nav>
 
@@ -70,8 +72,9 @@ export function Header() {
                   <Link to={link.to}>{link.label}</Link>
                 </Button>
               ))}
-              <div className="mt-1">
+              <div className="mt-1 flex items-center gap-1.5">
                 <LanguageToggle />
+                <ThemeToggle />
               </div>
             </div>
           </motion.div>

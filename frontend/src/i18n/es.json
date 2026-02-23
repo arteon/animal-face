@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "stats": "Estadísticas",
+    "title": "Test de Cara Animal"
+  },
+  "home": {
+    "title": "¿A qué animal me parezco?",
+    "subtitle": "Análisis de tu tipo de cara animal con IA",
+    "uploadButton": "Subir Foto",
+    "cameraButton": "Hacerse una Selfie",
+    "privacyNotice": "Tu foto se elimina inmediatamente después del análisis y nunca se almacena en nuestros servidores."
+  },
+  "upload": {
+    "dragDrop": "Arrastra tu foto aquí, o",
+    "or": "o",
+    "selectFile": "Seleccionar Archivo",
+    "maxSize": "Máx. 10MB, JPG/PNG compatibles"
+  },
+  "analysis": {
+    "analyzing": "Analizando...",
+    "detectingFace": "Detectando tu cara",
+    "matchingAnimal": "Encontrando tu animal coincidente",
+    "almostDone": "¡Casi listo!"
+  },
+  "result": {
+    "yourAnimal": "Tu animal es",
+    "matchRate": "Porcentaje de coincidencia",
+    "personality": "Rasgos de personalidad",
+    "celebrities": "Coincidencias con famosos",
+    "retake": "Hacer el test de nuevo",
+    "share": "Compartir tu resultado",
+    "shareText": "¡Soy un {{animal}}! ¿A qué animal te pareces tú?"
+  },
+  "stats": {
+    "title": "Estadísticas de Cara Animal",
+    "totalTests": "Total de Tests",
+    "mostPopular": "Animal más popular",
+    "distribution": "Distribución de animales",
+    "statsTitle": "Estadísticas - Test de Cara Animal",
+    "statsDescription": "¡Estadísticas del test de cara animal! ¿Cuál es el tipo de animal más popular? Consulta la distribución completa.",
+    "statsOgTitle": "Estadísticas de Cara Animal",
+    "statsOgDescription": "¿Cuál es el tipo de animal más popular?"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "retry": "Intentar de nuevo"
+  },
+  "footer": {
+    "title": "Test de Cara Animal",
+    "copyright": "© 2025 Test de Cara Animal. Las fotos subidas se eliminan inmediatamente después del análisis.",
+    "disclaimer": "Este servicio utiliza análisis de IA solo con fines de entretenimiento."
+  },
+  "seo": {
+    "homeTitle": "¿A qué animal me parezco? - Test de Cara Animal con IA",
+    "homeDescription": "¡Análisis de cara animal con IA! Sube tu selfie y descubre a cuál de los 12 animales te pareces. Test gratuito en línea.",
+    "homeKeywords": "test de cara animal, a qué animal me parezco, análisis de cara IA, test de forma facial",
+    "ogTitle": "¿A qué animal me parezco? - Test de Cara Animal con IA",
+    "ogDescription": "¡Sube tu selfie y descubre a qué animal te pareces! Test gratuito con IA.",
+    "twitterTitle": "¿A qué animal me parezco?",
+    "twitterDescription": "¡Test de cara animal con IA!"
+  },
+  "animals": {
+    "dog": {
+      "name": "Perro",
+      "description": "¡Irradias energía cálida y amigable que pone a todos a gusto! Tienes un don natural para hacer que las personas se sientan cómodas. Tu personalidad leal y dedicada te convierte en una presencia muy querida en cualquier grupo.",
+      "celebrities": ["Ryan Reynolds", "Jennifer Aniston", "Tom Hanks"]
+    },
+    "cat": {
+      "name": "Gato",
+      "description": "¡Independiente y misteriosamente encantador/a! Eres infinitamente afectuoso/a con quienes amas, pero necesitas tiempo para abrirte a nuevas personas. Tu agudo instinto y presencia elegante te hacen irresistiblemente intrigante.",
+      "celebrities": ["Zendaya", "Timothée Chalamet", "Angelina Jolie"]
+    },
+    "fox": {
+      "name": "Zorro",
+      "description": "¡Inteligente y magnético/a, brillas en cualquier situación! Lideras el ambiente con tus palabras ingeniosas y tu agudo sentido del estilo. Aunque pareces frío/a por fuera, en realidad eres un/a romántico/a profundamente sensible.",
+      "celebrities": ["Scarlett Johansson", "Chris Evans", "Penélope Cruz"]
+    },
+    "bear": {
+      "name": "Oso",
+      "description": "¡Sólido/a y cálido/a, transmites las vibraciones más reconfortantes! Aunque pareces fuerte por fuera, tu corazón es más cálido y tierno de lo que nadie sabe. Las personas naturalmente quieren confiarte sus secretos.",
+      "celebrities": ["Dwayne Johnson", "Sandra Bullock", "Chris Hemsworth"]
+    },
+    "rabbit": {
+      "name": "Conejo",
+      "description": "¡Desbordes de adorable y puro encanto! Tus reflejos rápidos y curiosidad sin límites te mantienen siempre explorando algo nuevo. Lindo/a por fuera, pero con un espíritu sorprendentemente resiliente que sorprende a todos.",
+      "celebrities": ["Ariana Grande", "Harry Styles", "Selena Gomez"]
+    },
+    "deer": {
+      "name": "Ciervo",
+      "description": "Tu belleza clara e inocente conquista a todos los que conoces. Tienes una sensibilidad excepcional y talento artístico, y eres un verdadero romántico que ama la naturaleza, la música y la literatura.",
+      "celebrities": ["Taylor Swift", "Shawn Mendes", "Emma Watson"]
+    },
+    "hamster": {
+      "name": "Hámster",
+      "description": "¡Solo verte con tus mejillas gorditas y lindas hace que todos sonrían! Eres del tipo trabajador y diligente que encuentra felicidad en las cosas más pequeñas. Tu desbordante energía positiva es irresistible.",
+      "celebrities": ["Billie Eilish", "Jung Kook", "Olivia Rodrigo"]
+    },
+    "wolf": {
+      "name": "Lobo",
+      "description": "¡Tienes carisma y una mirada intensa que exige atención! Tienes una cosmovisión fuerte y distintiva y convicciones inquebrantables. Líder natural del grupo, formas vínculos profundos y significativos con los pocos elegidos.",
+      "celebrities": ["Keanu Reeves", "Cate Blanchett", "Oscar Isaac"]
+    },
+    "penguin": {
+      "name": "Pingüino",
+      "description": "¡Lindo/a y tremendamente gracioso/a, eres el alma de cualquier fiesta! Aunque pareces cómico/a por fuera, por dentro eres increíblemente diligente y responsable. Una vez que te comprometes, tu devoción no conoce límites.",
+      "celebrities": ["Kevin Hart", "Rebel Wilson", "Jack Black"]
+    },
+    "owl": {
+      "name": "Búho",
+      "description": "Tu profunda mirada y tu aura intelectual te hacen inolvidable. Con notables habilidades de observación y perspicacia, te expresas mediante acciones más que palabras. Verdaderamente te animas por la noche.",
+      "celebrities": ["Benedict Cumberbatch", "Natalie Portman", "Joaquin Phoenix"]
+    },
+    "squirrel": {
+      "name": "Ardilla",
+      "description": "¡Enérgico/a y siempre en movimiento, te interesa todo! Estás notablemente preparado/a y eres ingenioso/a. Tu apariencia adorable combinada con una mente sorprendentemente ágil es tu punto de atractivo definitivo.",
+      "celebrities": ["Zooey Deschanel", "Michael B. Jordan", "Florence Pugh"]
+    },
+    "dinosaur": {
+      "name": "Dinosaurio",
+      "description": "¡Únicamente individual, tu presencia es simplemente abrumadora! Tienes un estilo distintivo propio que nunca se inclina ante las tendencias. Podrías parecer inusual al principio, pero cuanto más te conocen, más adictivamente encantador/a te vuelves.",
+      "celebrities": ["Lady Gaga", "Kanye West", "Björk"]
+    }
+  }
+}

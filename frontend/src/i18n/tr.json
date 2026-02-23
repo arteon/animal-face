@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "stats": "İstatistikler",
+    "title": "Hayvan Yüz Testi"
+  },
+  "home": {
+    "title": "Hangi hayvana benziyorum?",
+    "subtitle": "Yapay zeka destekli hayvan yüz analizi",
+    "uploadButton": "Fotoğraf Yükle",
+    "cameraButton": "Selfie Çek",
+    "privacyNotice": "Fotoğrafınız analiz sonrası hemen silinir ve sunucularımızda asla saklanmaz."
+  },
+  "upload": {
+    "dragDrop": "Fotoğrafınızı buraya sürükleyin veya",
+    "or": "veya",
+    "selectFile": "Dosya Seç",
+    "maxSize": "Maks. 10MB, JPG/PNG desteklenir"
+  },
+  "analysis": {
+    "analyzing": "Analiz ediliyor...",
+    "detectingFace": "Yüzünüz tespit ediliyor",
+    "matchingAnimal": "Hayvan eşleşmeniz bulunuyor",
+    "almostDone": "Neredeyse bitti!"
+  },
+  "result": {
+    "yourAnimal": "Hayvanınız",
+    "matchRate": "Eşleşme Oranı",
+    "personality": "Kişilik Özellikleri",
+    "celebrities": "Ünlü Eşleşmeleri",
+    "retake": "Testi Tekrar Yap",
+    "share": "Sonucunu Paylaş",
+    "shareText": "Ben bir {{animal}}ım! Sen hangi hayvana benziyorsun?"
+  },
+  "stats": {
+    "title": "Hayvan Yüz İstatistikleri",
+    "totalTests": "Toplam Test",
+    "mostPopular": "En Popüler Hayvan",
+    "distribution": "Hayvan Dağılımı",
+    "statsTitle": "İstatistikler - Hayvan Yüz Testi",
+    "statsDescription": "Hayvan yüz testi sonuç istatistikleri! En popüler hayvan türü hangisi? Tam dağılımı kontrol edin.",
+    "statsOgTitle": "Hayvan Yüz İstatistikleri",
+    "statsOgDescription": "En popüler hayvan türü hangisi?"
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Bir hata oluştu",
+    "retry": "Tekrar Dene"
+  },
+  "footer": {
+    "title": "Hayvan Yüz Testi",
+    "copyright": "© 2025 Hayvan Yüz Testi. Yüklenen fotoğraflar analiz sonrası hemen silinir.",
+    "disclaimer": "Bu hizmet yalnızca eğlence amaçlı yapay zeka analizi kullanmaktadır."
+  },
+  "seo": {
+    "homeTitle": "Hangi hayvana benziyorum? - Yapay Zeka Hayvan Yüz Testi",
+    "homeDescription": "Yapay zeka destekli hayvan yüz analizi! Selfienizi yükleyin ve 12 hayvan arasından hangisine benzediğinizi keşfedin. Ücretsiz online test.",
+    "homeKeywords": "hayvan yüz testi, hangi hayvana benziyorum, yapay zeka yüz analizi, yüz şekli testi",
+    "ogTitle": "Hangi hayvana benziyorum? - Yapay Zeka Hayvan Yüz Testi",
+    "ogDescription": "Selfienizi yükleyin ve hangi hayvana benzediğinizi keşfedin! Ücretsiz yapay zeka testi.",
+    "twitterTitle": "Hangi hayvana benziyorum?",
+    "twitterDescription": "Yapay zeka hayvan yüz testi!"
+  },
+  "animals": {
+    "dog": {
+      "name": "Köpek",
+      "description": "Herkesi rahatlatacak sıcak ve samimi bir enerji yayıyorsunuz! İnsanların kendilerini rahat hissetmesini sağlama konusunda doğal bir yeteneğiniz var. Sadık ve fedakâr kişiliğiniz sizi her grupta sevilen bir varlık haline getiriyor.",
+      "celebrities": ["Ryan Reynolds", "Jennifer Aniston", "Tom Hanks"]
+    },
+    "cat": {
+      "name": "Kedi",
+      "description": "Bağımsız ve gizemli derecede büyüleyici! Sevdiklerinize karşı sonsuz şefkatlisiniz ama yeni insanlara açılmak için zaman lazım. Keskin içgüdüleriniz ve zarif varlığınız sizi karşı konulamaz derecede ilgi çekici kılıyor.",
+      "celebrities": ["Zendaya", "Timothée Chalamet", "Angelina Jolie"]
+    },
+    "fox": {
+      "name": "Tilki",
+      "description": "Zeki ve manyetik, her durumda parlıyorsunuz! Nükteli sözleriniz ve keskin tarz anlayışınızla ortamı yönetiyorsunuz. Dışarıdan soğuk görünseniz de aslında derinden hassas bir romantiksiniz.",
+      "celebrities": ["Scarlett Johansson", "Chris Evans", "Megan Fox"]
+    },
+    "bear": {
+      "name": "Ayı",
+      "description": "Sağlam ve sıcak, en teselli edici titreşimleri yayıyorsunuz! Dışarıdan güçlü görünseniz de kalbiniz herkesin bildiğinden daha sıcak ve nazik. İnsanlar sırrlarını size doğal olarak anlatmak istiyor.",
+      "celebrities": ["Dwayne Johnson", "Sandra Bullock", "Chris Hemsworth"]
+    },
+    "rabbit": {
+      "name": "Tavşan",
+      "description": "Sevimli, saf bir cazibe ile taşıyorsunuz! Hızlı refleksleriniz ve sonsuz merakınız sizi her zaman yeni şeyler keşfetmeye itiyor. Dışarıdan tatlı, ama herkesi şaşırtan şaşırtıcı derecede dayanıklı bir ruha sahipsiniz.",
+      "celebrities": ["Ariana Grande", "Harry Styles", "Selena Gomez"]
+    },
+    "deer": {
+      "name": "Geyik",
+      "description": "Temiz ve masum güzelliğiniz tanıştığınız herkesi kazanıyor. İstisnai bir hassasiyetiniz ve sanatsal yeteneğiniz var; doğayı, müziği ve edebiyatı seven gerçek bir romantiksiniz.",
+      "celebrities": ["Taylor Swift", "Shawn Mendes", "Emma Watson"]
+    },
+    "hamster": {
+      "name": "Hamster",
+      "description": "Tombul yanakları sevimliğinize bakmak bile herkesi güldürüyor! En küçük şeylerde mutluluk bulan çalışkan ve titiz bir tipsiz. Taşan pozitif enerjiniz karşı konulamaz.",
+      "celebrities": ["Billie Eilish", "Jung Kook", "Olivia Rodrigo"]
+    },
+    "wolf": {
+      "name": "Kurt",
+      "description": "Karizmanız ve dikkati çeken yoğun bir bakışınız var! Güçlü, kendine özgü bir dünya görüşünüz ve sarsılmaz inançlarınız var. Doğal sürü lideri olarak, gerçekten içeri aldığınız seçkin birkaç kişiyle derin ve anlamlı bağlar kuruyorsunuz.",
+      "celebrities": ["Keanu Reeves", "Cate Blanchett", "Oscar Isaac"]
+    },
+    "penguin": {
+      "name": "Penguen",
+      "description": "Sevimli ve inanılmaz derecede komik, her partinin ruhusunuz! Dışarıdan komik görünseniz de içiniz inanılmaz derecede çalışkan ve sorumlu. Birine veya bir şeye bağlandığınızda, sadakatinizin sınırı yok.",
+      "celebrities": ["Kevin Hart", "Rebel Wilson", "Jack Black"]
+    },
+    "owl": {
+      "name": "Baykuş",
+      "description": "Derin bakışlarınız ve entelektüel auranız sizi unutulmaz kılıyor. Dikkat çekici gözlem becerileri ve keskin sezgilerinizle kendinizi kelimelerden çok eylemlerle ifade ediyorsunuz. Geceleri gerçekten hayat buluyorsunuz.",
+      "celebrities": ["Benedict Cumberbatch", "Natalie Portman", "Joaquin Phoenix"]
+    },
+    "squirrel": {
+      "name": "Sincap",
+      "description": "Enerjik ve her zaman hareket halinde, her şeyle ilgileniyorsunuz! Dikkate değer ölçüde hazırlıklı ve beceriklisiniz. Sevimli görünümünüzün şaşırtıcı derecede hızlı düşünen bir zihinle birleşmesi nihai çekicilik noktanızdır.",
+      "celebrities": ["Zooey Deschanel", "Michael B. Jordan", "Florence Pugh"]
+    },
+    "dinosaur": {
+      "name": "Dinozor",
+      "description": "Eşsiz birey, varlığınız basitçe ezici! Hiçbir zaman trendlere boyun eğmeyen kendine özgü bir tarzınız var. İlk başta alışılmadık görünebilirsiniz, ama insanlar sizi ne kadar çok tanırsa o kadar büyülü cazibenize o kadar bağımlı oluyorlar.",
+      "celebrities": ["Lady Gaga", "Kanye West", "Björk"]
+    }
+  }
+}

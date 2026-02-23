@@ -10,30 +10,50 @@ provider:
   memorySize: 512
   timeout: 30
   environment:
-    CORS_ORIGIN: ${env:CORS_ORIGIN, 'https://animal-face.quizlab.io'}
-    DB_HOST: ${env:DB_HOST, ''}
-    DB_PORT: ${env:DB_PORT, '5432'}
-    DB_NAME: ${env:DB_NAME, ''}
-    DB_USER: ${env:DB_USER, ''}
-    DB_PASSWORD: ${env:DB_PASSWORD, ''}
+    CORS_ORIGIN: ${self:custom.corsOrigin.${self:provider.stage}}
+    DB_HOST: !GetAtt RDSInstance.Endpoint.Address
+    DB_PORT: '5432'
+    DB_NAME: ${self:custom.db.name}
+    DB_USER: ${self:custom.db.username}
+    DB_PASSWORD: ${ssm:/animal-face/${self:provider.stage}/db-password}
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - ssm:GetParameter
+            - ssm:GetParameters
+          Resource:
+            - !Sub 'arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/animal-face/*'
   httpApi:
     cors:
       allowedOrigins:
-        - ${env:CORS_ORIGIN, 'https://animal-face.quizlab.io'}
+        - ${self:custom.corsOrigin.${self:provider.stage}}
       allowedHeaders:
         - Content-Type
+        - Accept
+        - Accept-Language
       allowedMethods:
         - GET
         - POST
         - OPTIONS
-    # Rate limiting: Configure via AWS Console or add:
-    # throttle:
-    #   burstLimit: 50
-    #   rateLimit: 100
+      maxAge: 86400
+    payload: '2.0'
+    throttle:
+      burstLimit: 50
+      rateLimit: 100
+  vpc:
+    securityGroupIds:
+      - !Ref LambdaSecurityGroup
+    subnetIds:
+      - !Ref PrivateSubnetA
+      - !Ref PrivateSubnetB
 
 functions:
   analyze:
     handler: handler.analyze
+    memorySize: 1024
+    timeout: 30
     events:
       - httpApi:
           path: /api/analyze
@@ -42,6 +62,8 @@ functions:
 
   stats:
     handler: handler.stats
+    memorySize: 256
+    timeout: 10
     events:
       - httpApi:
           path: /api/stats
@@ -52,6 +74,15 @@ plugins:
   - serverless-python-requirements
 
 custom:
+  corsOrigin:
+    dev: '*'
+    prod: 'https://animal-face.quizlab.io'
+  db:
+    name: animal_face
+    username: animalface_admin
+    instanceClass:
+      dev: db.t3.micro
+      prod: db.t3.small
   pythonRequirements:
     dockerizePip: true
     slim: true
@@ -59,3 +90,335 @@ custom:
     noDeploy:
       - pytest
       - boto3
+
+resources:
+  Resources:
+    # ── VPC ──────────────────────────────────────────────────────────────────
+    VPC:
+      Type: AWS::EC2::VPC
+      Properties:
+        CidrBlock: 10.0.0.0/16
+        EnableDnsHostnames: true
+        EnableDnsSupport: true
+        Tags:
+          - Key: Name
+            Value: animal-face-${self:provider.stage}-vpc
+
+    # ── Public Subnets ────────────────────────────────────────────────────────
+    PublicSubnetA:
+      Type: AWS::EC2::Subnet
+      Properties:
+        VpcId: !Ref VPC
+        CidrBlock: 10.0.1.0/24
+        AvailabilityZone: ap-northeast-2a
+        MapPublicIpOnLaunch: true
+        Tags:
+          - Key: Name
+            Value: animal-face-${self:provider.stage}-public-a
+
+    PublicSubnetC:
+      Type: AWS::EC2::Subnet
+      Properties:
+        VpcId: !Ref VPC
+        CidrBlock: 10.0.2.0/24
+        AvailabilityZone: ap-northeast-2c
+        MapPublicIpOnLaunch: true
+        Tags:
+          - Key: Name
+            Value: animal-face-${self:provider.stage}-public-c
+
+    # ── Private Subnets ───────────────────────────────────────────────────────
+    PrivateSubnetA:
+      Type: AWS::EC2::Subnet
+      Properties:
+        VpcId: !Ref VPC
+        CidrBlock: 10.0.3.0/24
+        AvailabilityZone: ap-northeast-2a
+        Tags:
+          - Key: Name
+            Value: animal-face-${self:provider.stage}-private-a
+
+    PrivateSubnetB:
+      Type: AWS::EC2::Subnet
+      Properties:
+        VpcId: !Ref VPC
+        CidrBlock: 10.0.4.0/24
+        AvailabilityZone: ap-northeast-2c
+        Tags:
+          - Key: Name
+            Value: animal-face-${self:provider.stage}-private-b
+
+    # ── Internet Gateway ──────────────────────────────────────────────────────
+    InternetGateway:
+      Type: AWS::EC2::InternetGateway
+      Properties:
+        Tags:
+          - Key: Name
+            Value: animal-face-${self:provider.stage}-igw
+
+    VPCGatewayAttachment:
+      Type: AWS::EC2::VPCGatewayAttachment
+      Properties:
+        VpcId: !Ref VPC
+        InternetGatewayId: !Ref InternetGateway
+
+    PublicRouteTable:
+      Type: AWS::EC2::RouteTable
+      Properties:
+        VpcId: !Ref VPC
+        Tags:
+          - Key: Name
+            Value: animal-face-${self:provider.stage}-public-rt
+
+    PublicRoute:
+      Type: AWS::EC2::Route
+      DependsOn: VPCGatewayAttachment
+      Properties:
+        RouteTableId: !Ref PublicRouteTable
+        DestinationCidrBlock: 0.0.0.0/0
+        GatewayId: !Ref InternetGateway
+
+    PublicSubnetARouteTableAssociation:
+      Type: AWS::EC2::SubnetRouteTableAssociation
+      Properties:
+        SubnetId: !Ref PublicSubnetA
+        RouteTableId: !Ref PublicRouteTable
+
+    PublicSubnetCRouteTableAssociation:
+      Type: AWS::EC2::SubnetRouteTableAssociation
+      Properties:
+        SubnetId: !Ref PublicSubnetC
+        RouteTableId: !Ref PublicRouteTable
+
+    # ── NAT Gateway ───────────────────────────────────────────────────────────
+    NatEIP:
+      Type: AWS::EC2::EIP
+      DependsOn: VPCGatewayAttachment
+      Properties:
+        Domain: vpc
+
+    NatGateway:
+      Type: AWS::EC2::NatGateway
+      Properties:
+        AllocationId: !GetAtt NatEIP.AllocationId
+        SubnetId: !Ref PublicSubnetA
+        Tags:
+          - Key: Name
+            Value: animal-face-${self:provider.stage}-nat
+
+    PrivateRouteTable:
+      Type: AWS::EC2::RouteTable
+      Properties:
+        VpcId: !Ref VPC
+        Tags:
+          - Key: Name
+            Value: animal-face-${self:provider.stage}-private-rt
+
+    PrivateRoute:
+      Type: AWS::EC2::Route
+      Properties:
+        RouteTableId: !Ref PrivateRouteTable
+        DestinationCidrBlock: 0.0.0.0/0
+        NatGatewayId: !Ref NatGateway
+
+    PrivateSubnetARouteTableAssociation:
+      Type: AWS::EC2::SubnetRouteTableAssociation
+      Properties:
+        SubnetId: !Ref PrivateSubnetA
+        RouteTableId: !Ref PrivateRouteTable
+
+    PrivateSubnetBRouteTableAssociation:
+      Type: AWS::EC2::SubnetRouteTableAssociation
+      Properties:
+        SubnetId: !Ref PrivateSubnetB
+        RouteTableId: !Ref PrivateRouteTable
+
+    # ── Security Groups ───────────────────────────────────────────────────────
+    LambdaSecurityGroup:
+      Type: AWS::EC2::SecurityGroup
+      Properties:
+        GroupDescription: Security group for Lambda functions
+        VpcId: !Ref VPC
+        SecurityGroupEgress:
+          - IpProtocol: '-1'
+            CidrIp: 0.0.0.0/0
+        Tags:
+          - Key: Name
+            Value: animal-face-${self:provider.stage}-lambda-sg
+
+    RDSSecurityGroup:
+      Type: AWS::EC2::SecurityGroup
+      Properties:
+        GroupDescription: Security group for RDS instance
+        VpcId: !Ref VPC
+        SecurityGroupIngress:
+          - IpProtocol: tcp
+            FromPort: 5432
+            ToPort: 5432
+            SourceSecurityGroupId: !Ref LambdaSecurityGroup
+        Tags:
+          - Key: Name
+            Value: animal-face-${self:provider.stage}-rds-sg
+
+    # ── RDS ───────────────────────────────────────────────────────────────────
+    DBSubnetGroup:
+      Type: AWS::RDS::DBSubnetGroup
+      Properties:
+        DBSubnetGroupDescription: Subnet group for animal-face RDS
+        SubnetIds:
+          - !Ref PrivateSubnetA
+          - !Ref PrivateSubnetB
+        Tags:
+          - Key: Name
+            Value: animal-face-${self:provider.stage}-db-subnet-group
+
+    RDSInstance:
+      Type: AWS::RDS::DBInstance
+      DeletionPolicy: Snapshot
+      Properties:
+        DBInstanceIdentifier: animal-face-${self:provider.stage}
+        DBInstanceClass: ${self:custom.db.instanceClass.${self:provider.stage}}
+        Engine: postgres
+        EngineVersion: '16'
+        DBName: ${self:custom.db.name}
+        MasterUsername: ${self:custom.db.username}
+        MasterUserPassword: ${ssm:/animal-face/${self:provider.stage}/db-password}
+        AllocatedStorage: '20'
+        StorageType: gp2
+        StorageEncrypted: true
+        MultiAZ: false
+        BackupRetentionPeriod: 7
+        DeletionProtection: false
+        DBSubnetGroupName: !Ref DBSubnetGroup
+        VPCSecurityGroups:
+          - !Ref RDSSecurityGroup
+        Tags:
+          - Key: Name
+            Value: animal-face-${self:provider.stage}-rds
+
+    # ── S3 Frontend Bucket ────────────────────────────────────────────────────
+    FrontendBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: animal-face-frontend-${self:provider.stage}
+        WebsiteConfiguration:
+          IndexDocument: index.html
+          ErrorDocument: index.html
+        PublicAccessBlockConfiguration:
+          BlockPublicAcls: true
+          BlockPublicPolicy: true
+          IgnorePublicAcls: true
+          RestrictPublicBuckets: true
+        Tags:
+          - Key: Name
+            Value: animal-face-${self:provider.stage}-frontend
+
+    # ── CloudFront OAI ────────────────────────────────────────────────────────
+    CloudFrontOAI:
+      Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+      Properties:
+        CloudFrontOriginAccessIdentityConfig:
+          Comment: OAI for animal-face-${self:provider.stage} frontend bucket
+
+    FrontendBucketPolicy:
+      Type: AWS::S3::BucketPolicy
+      Properties:
+        Bucket: !Ref FrontendBucket
+        PolicyDocument:
+          Statement:
+            - Effect: Allow
+              Principal:
+                CanonicalUser: !GetAtt CloudFrontOAI.S3CanonicalUserId
+              Action: s3:GetObject
+              Resource: !Sub '${FrontendBucket.Arn}/*'
+
+    # ── CloudFront Distribution ───────────────────────────────────────────────
+    CloudFrontDistribution:
+      Type: AWS::CloudFront::Distribution
+      Properties:
+        DistributionConfig:
+          Enabled: true
+          DefaultRootObject: index.html
+          PriceClass: PriceClass_200
+          HttpVersion: http2
+          Origins:
+            - Id: S3Origin
+              DomainName: !GetAtt FrontendBucket.RegionalDomainName
+              S3OriginConfig:
+                OriginAccessIdentity: !Sub 'origin-access-identity/cloudfront/${CloudFrontOAI}'
+            - Id: ApiGatewayOrigin
+              DomainName: !Sub '${HttpApi}.execute-api.${AWS::Region}.amazonaws.com'
+              CustomOriginConfig:
+                HTTPSPort: 443
+                OriginProtocolPolicy: https-only
+                OriginSSLProtocols:
+                  - TLSv1.2
+          CacheBehaviors:
+            - PathPattern: /api/*
+              TargetOriginId: ApiGatewayOrigin
+              ViewerProtocolPolicy: redirect-to-https
+              AllowedMethods:
+                - GET
+                - HEAD
+                - OPTIONS
+                - PUT
+                - POST
+                - PATCH
+                - DELETE
+              CachedMethods:
+                - GET
+                - HEAD
+              ForwardedValues:
+                QueryString: true
+                Headers:
+                  - Accept
+                  - Accept-Language
+                  - Content-Type
+                Cookies:
+                  Forward: none
+              DefaultTTL: 0
+              MinTTL: 0
+              MaxTTL: 0
+              Compress: true
+          DefaultCacheBehavior:
+            TargetOriginId: S3Origin
+            ViewerProtocolPolicy: redirect-to-https
+            AllowedMethods:
+              - GET
+              - HEAD
+              - OPTIONS
+            CachedMethods:
+              - GET
+              - HEAD
+            ForwardedValues:
+              QueryString: false
+              Cookies:
+                Forward: none
+            DefaultTTL: 86400
+            MinTTL: 0
+            MaxTTL: 31536000
+            Compress: true
+          CustomErrorResponses:
+            - ErrorCode: 403
+              ResponseCode: 200
+              ResponsePagePath: /index.html
+              ErrorCachingMinTTL: 0
+            - ErrorCode: 404
+              ResponseCode: 200
+              ResponsePagePath: /index.html
+              ErrorCachingMinTTL: 0
+        Tags:
+          - Key: Name
+            Value: animal-face-${self:provider.stage}-cf
+
+  Outputs:
+    ApiUrl:
+      Value: !Sub 'https://${HttpApi}.execute-api.${AWS::Region}.amazonaws.com'
+    CloudFrontUrl:
+      Value: !GetAtt CloudFrontDistribution.DomainName
+    CloudFrontDistributionId:
+      Value: !Ref CloudFrontDistribution
+    S3BucketName:
+      Value: !Ref FrontendBucket
+    RDSEndpoint:
+      Value: !GetAtt RDSInstance.Endpoint.Address

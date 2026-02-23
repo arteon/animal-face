@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "stats": "Thống kê",
+    "title": "Kiểm tra Khuôn mặt Động vật"
+  },
+  "home": {
+    "title": "Tôi trông giống động vật nào?",
+    "subtitle": "Phân tích khuôn mặt động vật bằng AI",
+    "uploadButton": "Tải ảnh lên",
+    "cameraButton": "Chụp ảnh selfie",
+    "privacyNotice": "Ảnh của bạn sẽ bị xóa ngay sau khi phân tích và không bao giờ được lưu trên máy chủ của chúng tôi."
+  },
+  "upload": {
+    "dragDrop": "Kéo ảnh vào đây, hoặc",
+    "or": "hoặc",
+    "selectFile": "Chọn tệp",
+    "maxSize": "Tối đa 10MB, hỗ trợ JPG/PNG"
+  },
+  "analysis": {
+    "analyzing": "Đang phân tích...",
+    "detectingFace": "Đang nhận diện khuôn mặt",
+    "matchingAnimal": "Đang tìm động vật phù hợp",
+    "almostDone": "Gần xong rồi!"
+  },
+  "result": {
+    "yourAnimal": "Động vật của bạn là",
+    "matchRate": "Tỷ lệ khớp",
+    "personality": "Đặc điểm tính cách",
+    "celebrities": "Người nổi tiếng tương tự",
+    "retake": "Làm lại bài kiểm tra",
+    "share": "Chia sẻ kết quả",
+    "shareText": "Tôi trông giống {{animal}}! Bạn trông giống động vật nào?"
+  },
+  "stats": {
+    "title": "Thống kê Khuôn mặt Động vật",
+    "totalTests": "Tổng số bài kiểm tra",
+    "mostPopular": "Động vật phổ biến nhất",
+    "distribution": "Phân bổ động vật",
+    "statsTitle": "Thống kê - Kiểm tra Khuôn mặt Động vật",
+    "statsDescription": "Thống kê bài kiểm tra khuôn mặt động vật! Loại động vật phổ biến nhất là gì? Xem phân bổ đầy đủ.",
+    "statsOgTitle": "Thống kê Khuôn mặt Động vật",
+    "statsOgDescription": "Loại động vật phổ biến nhất là gì?"
+  },
+  "common": {
+    "loading": "Đang tải...",
+    "error": "Đã xảy ra lỗi",
+    "retry": "Thử lại"
+  },
+  "footer": {
+    "title": "Kiểm tra Khuôn mặt Động vật",
+    "copyright": "© 2025 Kiểm tra Khuôn mặt Động vật. Ảnh tải lên sẽ bị xóa ngay sau khi phân tích.",
+    "disclaimer": "Dịch vụ này sử dụng phân tích AI chỉ cho mục đích giải trí."
+  },
+  "seo": {
+    "homeTitle": "Tôi trông giống động vật nào? - Kiểm tra Khuôn mặt Động vật AI",
+    "homeDescription": "Phân tích khuôn mặt động vật bằng AI! Tải ảnh selfie lên và khám phá bạn trông giống loài nào trong 12 loài động vật. Kiểm tra miễn phí trực tuyến.",
+    "homeKeywords": "kiểm tra khuôn mặt động vật, tôi trông giống động vật nào, phân tích khuôn mặt AI, kiểm tra hình dáng khuôn mặt",
+    "ogTitle": "Tôi trông giống động vật nào? - Kiểm tra Khuôn mặt Động vật AI",
+    "ogDescription": "Tải ảnh selfie lên và khám phá bạn trông giống động vật nào! Kiểm tra AI miễn phí.",
+    "twitterTitle": "Tôi trông giống động vật nào?",
+    "twitterDescription": "Kiểm tra khuôn mặt động vật AI!"
+  },
+  "animals": {
+    "dog": {
+      "name": "Chó",
+      "description": "Bạn tỏa ra năng lượng ấm áp và thân thiện khiến mọi người cảm thấy thoải mái! Bạn có tài năng tự nhiên trong việc làm cho mọi người cảm thấy dễ chịu. Tính cách trung thành và tận tâm của bạn làm cho bạn trở thành sự hiện diện được yêu thích trong bất kỳ nhóm nào.",
+      "celebrities": ["Ryan Reynolds", "Jennifer Aniston", "Tom Hanks"]
+    },
+    "cat": {
+      "name": "Mèo",
+      "description": "Độc lập và quyến rũ một cách bí ẩn! Bạn vô cùng tình cảm với những người bạn yêu nhưng cần thời gian để mở lòng với người mới. Bản năng nhạy bén và sự hiện diện duyên dáng của bạn khiến bạn thú vị một cách không thể cưỡng lại.",
+      "celebrities": ["Zendaya", "Timothée Chalamet", "Angelina Jolie"]
+    },
+    "fox": {
+      "name": "Cáo",
+      "description": "Thông minh và thu hút, bạn tỏa sáng trong mọi tình huống! Bạn dẫn dắt bầu không khí bằng những lời nói dí dỏm và phong cách nhạy bén. Dù trông bình thản bên ngoài, thực ra bạn là một người lãng mạn nhạy cảm sâu sắc.",
+      "celebrities": ["Scarlett Johansson", "Chris Evans", "Megan Fox"]
+    },
+    "bear": {
+      "name": "Gấu",
+      "description": "Vững chắc và ấm áp, bạn tỏa ra những rung cảm thoải mái nhất! Dù trông mạnh mẽ bên ngoài, trái tim bạn ấm áp và mềm mại hơn bất kỳ ai biết. Mọi người tự nhiên muốn tâm sự với bản chất đáng tin cậy của bạn.",
+      "celebrities": ["Dwayne Johnson", "Sandra Bullock", "Chris Hemsworth"]
+    },
+    "rabbit": {
+      "name": "Thỏ",
+      "description": "Bạn tràn đầy sức quyến rũ dễ thương và thuần khiết! Phản xạ nhanh nhẹn và sự tò mò vô hạn của bạn luôn khiến bạn khám phá điều gì đó mới. Dễ thương bên ngoài, nhưng với tinh thần kiên cường đáng ngạc nhiên làm bất ngờ mọi người.",
+      "celebrities": ["Ariana Grande", "Harry Styles", "Selena Gomez"]
+    },
+    "deer": {
+      "name": "Nai",
+      "description": "Vẻ đẹp trong sáng và hồn nhiên của bạn chinh phục mọi người bạn gặp. Bạn có sự nhạy cảm đặc biệt và năng khiếu nghệ thuật, là một người lãng mạn thực sự yêu thiên nhiên, âm nhạc và văn học.",
+      "celebrities": ["Taylor Swift", "Shawn Mendes", "Emma Watson"]
+    },
+    "hamster": {
+      "name": "Chuột Hamster",
+      "description": "Chỉ nhìn thấy bạn với đôi má phúng phính dễ thương là làm mọi người cười rồi! Bạn là kiểu người chăm chỉ và cần cù luôn tìm thấy hạnh phúc trong những điều nhỏ nhặt nhất. Năng lượng tích cực tràn đầy của bạn thật không thể cưỡng lại.",
+      "celebrities": ["Billie Eilish", "Jung Kook", "Olivia Rodrigo"]
+    },
+    "wolf": {
+      "name": "Sói",
+      "description": "Bạn có sức hút và ánh mắt mãnh liệt thu hút sự chú ý! Bạn có thế giới quan mạnh mẽ và khác biệt cùng những niềm tin bất khả xâm phạm. Lãnh đạo bầy đàn bẩm sinh, bạn hình thành những mối liên kết sâu sắc và có ý nghĩa với số ít người bạn thực sự cho phép tiếp cận.",
+      "celebrities": ["Keanu Reeves", "Cate Blanchett", "Oscar Isaac"]
+    },
+    "penguin": {
+      "name": "Chim Cánh Cụt",
+      "description": "Dễ thương và cực kỳ hài hước, bạn là linh hồn của mọi bữa tiệc! Dù trông hài hước bên ngoài, bên trong bạn vô cùng chăm chỉ và có trách nhiệm. Một khi bạn cam kết với ai đó hay điều gì, sự tận tụy của bạn không có giới hạn.",
+      "celebrities": ["Kevin Hart", "Rebel Wilson", "Jack Black"]
+    },
+    "owl": {
+      "name": "Cú Mèo",
+      "description": "Ánh mắt sâu thẳm và khí chất trí tuệ của bạn khiến bạn khó quên. Với kỹ năng quan sát đáng chú ý và trực giác nhạy bén, bạn thể hiện bản thân qua hành động hơn là lời nói. Bạn thực sự sống động vào ban đêm.",
+      "celebrities": ["Benedict Cumberbatch", "Natalie Portman", "Joaquin Phoenix"]
+    },
+    "squirrel": {
+      "name": "Sóc",
+      "description": "Tràn đầy năng lượng và luôn vận động, bạn quan tâm đến mọi thứ! Bạn cực kỳ có sự chuẩn bị và tháo vát. Vẻ ngoài dễ thương của bạn kết hợp với trí óc nhanh nhẹn đáng ngạc nhiên là điểm hấp dẫn tối thượng của bạn.",
+      "celebrities": ["Zooey Deschanel", "Michael B. Jordan", "Florence Pugh"]
+    },
+    "dinosaur": {
+      "name": "Khủng Long",
+      "description": "Cá nhân và độc đáo, sự hiện diện của bạn đơn giản là áp đảo! Bạn có phong cách đặc trưng của riêng mình không bao giờ cúi đầu trước xu hướng. Bạn có thể trông bất thường lúc đầu, nhưng càng biết bạn, người ta càng bị mê hoặc bởi sức hút gây nghiện của bạn.",
+      "celebrities": ["Lady Gaga", "Kanye West", "Björk"]
+    }
+  }
+}
