@@ -253,6 +253,19 @@ This project is licensed under the [MIT License](LICENSE). Free to use, modify, 
 
 ---
 
+## 🙏 Acknowledgments
+
+- [MediaPipe](https://mediapipe.dev/) — Google's ML framework powering the 468-point face mesh detection
+- [React](https://react.dev/) — UI library for building the interactive frontend
+- [Vite](https://vitejs.dev/) — Next-generation frontend build tool
+- [shadcn/ui](https://ui.shadcn.com/) — Beautifully designed, accessible component library
+- [Tailwind CSS](https://tailwindcss.com/) — Utility-first CSS framework
+- [Framer Motion](https://www.framer.com/motion/) — Production-ready animation library for React
+- [AWS Lambda](https://aws.amazon.com/lambda/) — Serverless compute for the backend
+- [i18next](https://www.i18next.com/) — Internationalization framework
+
+---
+
 ## 🔗 Links
 
 - **Live Demo:** [animal-face.quizlab.io](https://animal-face.quizlab.io)
