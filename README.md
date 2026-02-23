@@ -12,6 +12,7 @@ AI-powered facial analysis that matches your face to one of 12 animal types usin
 [![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![AWS Lambda](https://img.shields.io/badge/AWS-Lambda-FF9900?style=flat-square&logo=awslambda&logoColor=white)](https://aws.amazon.com/lambda/)
 [![MediaPipe](https://img.shields.io/badge/MediaPipe-Face_Mesh-0097A7?style=flat-square)](https://mediapipe.dev/)
+[![CI](https://github.com/black4305/animal-face/actions/workflows/ci.yml/badge.svg)](https://github.com/black4305/animal-face/actions/workflows/ci.yml)
 
 <br/>
 
@@ -34,6 +35,18 @@ AI-powered facial analysis that matches your face to one of 12 animal types usin
 - 📱 **Responsive** — Mobile-first design with smooth Framer Motion animations throughout
 - 📊 **Statistics** — Live global animal distribution dashboard showing real-time results from all users
 - 🔗 **Social Sharing** — Share your result instantly on Twitter, Facebook, or KakaoTalk
+
+---
+
+## 🖼️ Preview
+
+<div align="center">
+
+| Upload | Analysis | Result |
+|:---:|:---:|:---:|
+| Drag & drop or click to upload your photo | AI analyzes 468 facial landmarks in seconds | See your animal match with detailed breakdown |
+
+</div>
 
 ---
 
@@ -257,6 +270,22 @@ Made with 🐾 by [QuizLab](https://github.com/black4305)
 
 ---
 
+## 🌟 Star History
+
+If you find this project interesting, please consider giving it a star! It helps others discover it.
+
+[![Star History Chart](https://api.star-history.com/svg?repos=black4305/animal-face&type=Date)](https://star-history.com/#black4305/animal-face&Date)
+
+---
+
+## 👥 Contributors
+
+<a href="https://github.com/black4305/animal-face/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=black4305/animal-face" />
+</a>
+
+---
+
 ---
 
 ## 🇰🇷 한국어
@@ -266,6 +295,8 @@ Made with 🐾 by [QuizLab](https://github.com/black4305)
 **Animal Face Test**는 MediaPipe의 468포인트 얼굴 랜드마크를 이용해 사용자의 얼굴을 분석하고, 12가지 동물 유형 중 가장 닮은 동물을 찾아주는 AI 웹 앱입니다. 이미지는 서버 메모리에서만 처리되며 저장되지 않습니다.
 
 **라이브 데모 → [animal-face.quizlab.io](https://animal-face.quizlab.io)**
+
+> 🎮 **[지금 바로 테스트하기 →](https://animal-face.quizlab.io)**
 
 ---
 
