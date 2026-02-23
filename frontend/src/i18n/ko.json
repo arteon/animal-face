@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "home": "홈",
+    "stats": "통계",
+    "title": "동물상 테스트"
+  },
+  "home": {
+    "title": "나는 어떤 동물상?",
+    "subtitle": "AI가 분석하는 나의 동물 얼굴형",
+    "uploadButton": "사진 업로드",
+    "cameraButton": "카메라로 촬영",
+    "privacyNotice": "업로드된 사진은 분석 후 즉시 삭제되며, 서버에 저장되지 않습니다."
+  },
+  "upload": {
+    "dragDrop": "여기에 사진을 드래그하거나",
+    "or": "또는",
+    "selectFile": "파일 선택",
+    "maxSize": "최대 10MB, JPG/PNG 지원"
+  },
+  "analysis": {
+    "analyzing": "분석 중...",
+    "detectingFace": "얼굴을 감지하고 있어요",
+    "matchingAnimal": "닮은 동물을 찾고 있어요",
+    "almostDone": "거의 다 됐어요!"
+  },
+  "result": {
+    "yourAnimal": "당신의 동물상은",
+    "matchRate": "닮은 정도",
+    "personality": "성격 특징",
+    "celebrities": "닮은 유명인",
+    "retake": "다시 테스트하기",
+    "share": "결과 공유하기",
+    "shareText": "나는 {{animal}}상! 너는 어떤 동물상?"
+  },
+  "stats": {
+    "title": "동물상 통계",
+    "totalTests": "총 테스트 수",
+    "mostPopular": "가장 많은 동물상",
+    "distribution": "동물상 분포"
+  },
+  "common": {
+    "loading": "로딩 중...",
+    "error": "오류가 발생했습니다",
+    "retry": "다시 시도"
+  }
+}

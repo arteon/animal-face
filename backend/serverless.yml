@@ -1,0 +1,61 @@
+service: animal-face
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.11
+  region: ap-northeast-2
+  stage: ${opt:stage, 'dev'}
+  memorySize: 512
+  timeout: 30
+  environment:
+    CORS_ORIGIN: ${env:CORS_ORIGIN, 'https://animal-face.quizlab.io'}
+    DB_HOST: ${env:DB_HOST, ''}
+    DB_PORT: ${env:DB_PORT, '5432'}
+    DB_NAME: ${env:DB_NAME, ''}
+    DB_USER: ${env:DB_USER, ''}
+    DB_PASSWORD: ${env:DB_PASSWORD, ''}
+  httpApi:
+    cors:
+      allowedOrigins:
+        - ${env:CORS_ORIGIN, 'https://animal-face.quizlab.io'}
+      allowedHeaders:
+        - Content-Type
+      allowedMethods:
+        - GET
+        - POST
+        - OPTIONS
+    # Rate limiting: Configure via AWS Console or add:
+    # throttle:
+    #   burstLimit: 50
+    #   rateLimit: 100
+
+functions:
+  analyze:
+    handler: handler.analyze
+    events:
+      - httpApi:
+          path: /api/analyze
+          method: post
+    description: Analyze face image and match to animal type
+
+  stats:
+    handler: handler.stats
+    events:
+      - httpApi:
+          path: /api/stats
+          method: get
+    description: Get animal face test statistics
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
+    slim: true
+    strip: false
+    noDeploy:
+      - pytest
+      - boto3

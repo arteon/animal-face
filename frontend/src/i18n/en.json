@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "home": "Home",
+    "stats": "Stats",
+    "title": "Animal Face Test"
+  },
+  "home": {
+    "title": "What Animal Do I Look Like?",
+    "subtitle": "AI-powered animal face shape analysis",
+    "uploadButton": "Upload Photo",
+    "cameraButton": "Take a Selfie",
+    "privacyNotice": "Your photo is deleted immediately after analysis and is never stored on our servers."
+  },
+  "upload": {
+    "dragDrop": "Drag your photo here, or",
+    "or": "or",
+    "selectFile": "Select File",
+    "maxSize": "Max 10MB, JPG/PNG supported"
+  },
+  "analysis": {
+    "analyzing": "Analyzing...",
+    "detectingFace": "Detecting your face",
+    "matchingAnimal": "Finding your animal match",
+    "almostDone": "Almost there!"
+  },
+  "result": {
+    "yourAnimal": "Your animal is",
+    "matchRate": "Match Rate",
+    "personality": "Personality Traits",
+    "celebrities": "Celebrity Matches",
+    "retake": "Take the Test Again",
+    "share": "Share Your Result",
+    "shareText": "I'm a {{animal}}! What animal do you look like?"
+  },
+  "stats": {
+    "title": "Animal Face Statistics",
+    "totalTests": "Total Tests",
+    "mostPopular": "Most Popular Animal",
+    "distribution": "Animal Distribution"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Try Again"
+  }
+}

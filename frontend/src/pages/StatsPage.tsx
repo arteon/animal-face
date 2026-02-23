@@ -1,0 +1,161 @@
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Progress } from "@/components/ui/progress";
+import { getStats, type Stats } from "@/lib/api";
+import { animals } from "@/data/animals";
+
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.06 } },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -12 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.35 } },
+};
+
+export function StatsPage() {
+  const { t, i18n } = useTranslation();
+  const isKorean = i18n.language === "ko" || i18n.language.startsWith("ko-");
+  const [stats, setStats] = useState<Stats | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getStats()
+      .then(setStats)
+      .finally(() => setLoading(false));
+  }, []);
+
+  const sorted = stats
+    ? animals
+        .map((a) => ({ ...a, count: stats.animalCounts[a.id] ?? 0 }))
+        .sort((a, b) => b.count - a.count)
+    : [];
+
+  const maxCount = sorted[0]?.count ?? 1;
+  const topAnimal = sorted[0];
+
+  return (
+    <>
+      <Helmet>
+        <title>
+          {isKorean ? "동물상 통계 - 동물상 테스트" : "Animal Face Stats - Animal Face Test"}
+        </title>
+        <meta
+          name="description"
+          content={
+            isKorean
+              ? "동물상 테스트 결과 통계! 가장 많은 동물상은? 전체 분포를 확인해보세요."
+              : "Animal face test statistics! What's the most popular animal type? Check the full distribution."
+          }
+        />
+        <meta property="og:title" content={isKorean ? "동물상 통계" : "Animal Face Stats"} />
+        <meta property="og:description" content={isKorean ? "가장 인기있는 동물상은?" : "What's the most popular animal type?"} />
+        <meta name="twitter:card" content="summary" />
+        <link rel="canonical" href="https://animal-face.quizlab.io/stats" />
+      </Helmet>
+
+      <div className="mx-auto max-w-2xl px-4 py-10">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="space-y-6"
+        >
+          <h1 className="text-3xl font-black tracking-tight">{t("stats.title")}</h1>
+
+          {loading && (
+            <div className="flex justify-center py-20">
+              <span className="text-4xl animate-bounce">🐾</span>
+            </div>
+          )}
+
+          {!loading && stats && (
+            <>
+              <div className="grid grid-cols-2 gap-4">
+                <Card>
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-xs text-muted-foreground uppercase tracking-wider">
+                      {t("stats.totalTests")}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-3xl font-black">
+                      {stats.totalAnalyses.toLocaleString()}
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {topAnimal && (
+                  <Card
+                    style={{
+                      background: `linear-gradient(135deg, ${topAnimal.color}18 0%, ${topAnimal.color}08 100%)`,
+                      borderColor: `${topAnimal.color}40`,
+                    }}
+                  >
+                    <CardHeader className="pb-2">
+                      <CardTitle className="text-xs text-muted-foreground uppercase tracking-wider">
+                        {t("stats.mostPopular")}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center gap-2">
+                        <span className="text-3xl">{topAnimal.emoji}</span>
+                        <div>
+                          <p className="font-bold">
+                            {isKorean ? topAnimal.nameKo : topAnimal.nameEn}
+                          </p>
+                          <Badge variant="secondary" className="text-xs mt-0.5">
+                            {((topAnimal.count / stats.totalAnalyses) * 100).toFixed(1)}%
+                          </Badge>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                )}
+              </div>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-base">{t("stats.distribution")}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className="space-y-3"
+                  >
+                    {sorted.map((animal, rank) => (
+                      <motion.div key={animal.id} variants={itemVariants}>
+                        <div className="flex items-center gap-3">
+                          <span className="w-5 text-xs text-muted-foreground text-right">
+                            {rank + 1}
+                          </span>
+                          <span className="text-xl">{animal.emoji}</span>
+                          <span className="w-20 text-xs font-medium truncate">
+                            {isKorean ? animal.nameKo : animal.nameEn}
+                          </span>
+                          <Progress
+                            value={(animal.count / maxCount) * 100}
+                            className="flex-1 h-2"
+                          />
+                          <span className="w-14 text-right text-xs font-semibold tabular-nums text-muted-foreground">
+                            {animal.count.toLocaleString()}
+                          </span>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                </CardContent>
+              </Card>
+            </>
+          )}
+        </motion.div>
+      </div>
+    </>
+  );
+}
