@@ -60,7 +60,16 @@ async function delay(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-export async function analyzeImage(file: File): Promise<AnalysisResult> {
+async function parseError(res: Response): Promise<string> {
+  try {
+    const body = await res.json();
+    return body.error || `API error: ${res.status}`;
+  } catch {
+    return `API error: ${res.status}`;
+  }
+}
+
+export async function analyzeImage(file: File, signal?: AbortSignal): Promise<AnalysisResult> {
   if (!API_BASE_URL) {
     await delay(3000);
     return generateMockResult();
@@ -72,10 +81,11 @@ export async function analyzeImage(file: File): Promise<AnalysisResult> {
   const res = await fetch(`${API_BASE_URL}/analyze`, {
     method: "POST",
     body: formData,
+    signal,
   });
 
   if (!res.ok) {
-    throw new Error(`API error: ${res.status}`);
+    throw new Error(await parseError(res));
   }
 
   return res.json() as Promise<AnalysisResult>;
@@ -90,7 +100,7 @@ export async function getStats(): Promise<Stats> {
   const res = await fetch(`${API_BASE_URL}/stats`);
 
   if (!res.ok) {
-    throw new Error(`API error: ${res.status}`);
+    throw new Error(await parseError(res));
   }
 
   return res.json() as Promise<Stats>;

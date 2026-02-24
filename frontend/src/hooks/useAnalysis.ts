@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import { analyzeImage, type AnalysisResult } from "@/lib/api";
 
 export type AnalysisStatus = "idle" | "uploading" | "analyzing" | "done" | "error";
@@ -18,7 +18,13 @@ export function useAnalysis() {
     previewUrl: null,
   });
 
+  const abortControllerRef = useRef<AbortController | null>(null);
+
   const analyze = useCallback(async (file: File) => {
+    abortControllerRef.current?.abort();
+    const controller = new AbortController();
+    abortControllerRef.current = controller;
+
     const previewUrl = URL.createObjectURL(file);
 
     setState({
@@ -33,9 +39,10 @@ export function useAnalysis() {
     setState((prev) => ({ ...prev, status: "analyzing" }));
 
     try {
-      const result = await analyzeImage(file);
+      const result = await analyzeImage(file, controller.signal);
       setState((prev) => ({ ...prev, status: "done", result }));
     } catch (err) {
+      if (err instanceof Error && err.name === "AbortError") return;
       setState((prev) => ({
         ...prev,
         status: "error",
@@ -45,6 +52,8 @@ export function useAnalysis() {
   }, []);
 
   const reset = useCallback(() => {
+    abortControllerRef.current?.abort();
+    abortControllerRef.current = null;
     setState((prev) => {
       if (prev.previewUrl) {
         URL.revokeObjectURL(prev.previewUrl);

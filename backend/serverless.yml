@@ -70,6 +70,16 @@ functions:
           method: get
     description: Get animal face test statistics
 
+  health:
+    handler: handler.health
+    memorySize: 128
+    timeout: 5
+    events:
+      - http:
+          path: api/health
+          method: get
+          cors: true
+
 plugins:
   - serverless-python-requirements
 

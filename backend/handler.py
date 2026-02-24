@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 CORS_HEADERS = {
     "Access-Control-Allow-Origin":  os.environ.get("CORS_ORIGIN", "*"),
     "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Headers": "Content-Type, Accept, Accept-Language",
 }
 
 MAX_IMAGE_SIZE = 10 * 1024 * 1024  # 10MB
@@ -101,6 +101,10 @@ def analyze(event: dict, context) -> dict:
         logger.warning("Failed to save analysis result for animal: %s", top_animal, exc_info=True)
 
     return _response(200, {"topAnimal": top_animal, "matches": matches})
+
+
+def health(event: dict, context) -> dict:
+    return _response(200, {"status": "ok", "service": "animal-face-api"})
 
 
 def stats(event: dict, context) -> dict:

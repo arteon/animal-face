@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet-async";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
+import { Button } from "@/components/ui/button";
 import { getStats, type Stats } from "@/lib/api";
 import { animals } from "@/data/animals";
 
@@ -22,10 +23,12 @@ export function StatsPage() {
   const { t } = useTranslation();
   const [stats, setStats] = useState<Stats | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     getStats()
       .then(setStats)
+      .catch(() => setError(true))
       .finally(() => setLoading(false));
   }, []);
 
@@ -60,6 +63,16 @@ export function StatsPage() {
           {loading && (
             <div className="flex justify-center py-20">
               <span className="text-4xl animate-bounce">🐾</span>
+            </div>
+          )}
+
+          {!loading && error && (
+            <div className="flex flex-col items-center gap-4 py-20 text-center">
+              <span className="text-5xl">😢</span>
+              <p className="text-base font-medium text-foreground">{t("common.error")}</p>
+              <Button onClick={() => { setError(false); setLoading(true); getStats().then(setStats).catch(() => setError(true)).finally(() => setLoading(false)); }}>
+                {t("common.retry")}
+              </Button>
             </div>
           )}
 
