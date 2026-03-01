@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { Helmet } from "react-helmet-async";
@@ -12,28 +13,49 @@ import { useAnalysis } from "@/hooks/useAnalysis";
 
 const FLOATING_EMOJIS = ["🐶", "🐱", "🦊", "🐻", "🐰", "🦌", "🐹", "🐺", "🐧", "🦉", "🐿️", "🦕"];
 
-function FloatingEmoji({ emoji, index }: { emoji: string; index: number }) {
+const ANIMAL_GRID = [
+  { emoji: "🐶", id: "dog" },
+  { emoji: "🐱", id: "cat" },
+  { emoji: "🦊", id: "fox" },
+  { emoji: "🐻", id: "bear" },
+  { emoji: "🐰", id: "rabbit" },
+  { emoji: "🦌", id: "deer" },
+  { emoji: "🐹", id: "hamster" },
+  { emoji: "🐺", id: "wolf" },
+  { emoji: "🐧", id: "penguin" },
+  { emoji: "🦉", id: "owl" },
+  { emoji: "🐿️", id: "squirrel" },
+  { emoji: "🦕", id: "dinosaur" },
+];
+
+const FloatingEmoji = memo(function FloatingEmoji({ emoji, index }: { emoji: string; index: number }) {
   const duration = 3 + (index % 4) * 0.8;
   const delay = (index * 0.3) % 2;
   const x = ((index * 137.5) % 100);
 
   return (
     <motion.span
-      className="absolute select-none text-2xl opacity-20 pointer-events-none"
-      style={{ left: `${x}%`, top: "-2rem" }}
-      animate={{ y: ["0vh", "110vh"] }}
+      className="absolute select-none text-2xl pointer-events-none"
+      style={{ left: `${x}%`, top: "-2rem", opacity: 0.15 }}
+      animate={{ y: ["0vh", "110vh"], scale: [1, 1.08, 1] }}
       transition={{
         duration,
         delay,
         repeat: Infinity,
         ease: "linear",
         repeatDelay: index * 0.5,
+        scale: {
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut",
+        },
       }}
+      aria-hidden="true"
     >
       {emoji}
     </motion.span>
   );
-}
+});
 
 export function HomePage() {
   const { t } = useTranslation();
@@ -77,6 +99,12 @@ export function HomePage() {
                 <div className="text-center space-y-3">
                   <motion.h1
                     className="text-4xl font-black tracking-tight sm:text-5xl"
+                    style={{
+                      background: "linear-gradient(135deg, #F59E0B, #EF4444, #EC4899)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
@@ -91,6 +119,22 @@ export function HomePage() {
                   >
                     {t("home.subtitle")}
                   </motion.p>
+                  <motion.div
+                    className="flex flex-wrap justify-center gap-1.5 pt-2"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.35 }}
+                  >
+                    {ANIMAL_GRID.map(({ emoji, id }) => (
+                      <span
+                        key={id}
+                        className="inline-flex items-center gap-1 rounded-full bg-muted/60 px-2 py-0.5 text-xs text-muted-foreground backdrop-blur-sm"
+                      >
+                        <span>{emoji}</span>
+                        <span className="hidden sm:inline">{t(`animals.${id}.name`)}</span>
+                      </span>
+                    ))}
+                  </motion.div>
                 </div>
 
                 <AdSlot />
@@ -144,7 +188,7 @@ export function HomePage() {
                 exit={{ opacity: 0 }}
                 className="flex flex-col items-center gap-4 py-20 text-center"
               >
-                <span className="text-5xl">😢</span>
+                <span className="text-5xl" aria-hidden="true">😢</span>
                 <p className="text-base font-medium text-foreground">{t("common.error")}</p>
                 {error && (
                   <p className="text-xs text-muted-foreground max-w-sm">{error}</p>

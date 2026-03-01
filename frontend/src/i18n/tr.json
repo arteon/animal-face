@@ -21,11 +21,15 @@
     "analyzing": "Analiz ediliyor...",
     "detectingFace": "Yüzünüz tespit ediliyor",
     "matchingAnimal": "Hayvan eşleşmeniz bulunuyor",
-    "almostDone": "Neredeyse bitti!"
+    "almostDone": "Neredeyse bitti!",
+    "tip1": "Biliyor muydunuz? Köpekler 100'den fazla insan yüzünü tanıyabilir!",
+    "tip2": "Eğlenceli bilgi: kedilerin 20'den fazla farklı sesi vardır",
+    "tip3": "Yapay zeka sana uygun hayvanı bulmak için 468 yüz noktasını analiz ediyor"
   },
   "result": {
     "yourAnimal": "Hayvanınız",
     "matchRate": "Eşleşme Oranı",
+    "topMatches": "En iyi eşleşmeler",
     "personality": "Kişilik Özellikleri",
     "celebrities": "Ünlü Eşleşmeleri",
     "retake": "Testi Tekrar Yap",
@@ -49,7 +53,7 @@
   },
   "footer": {
     "title": "Hayvan Yüz Testi",
-    "copyright": "© 2025 Hayvan Yüz Testi. Yüklenen fotoğraflar analiz sonrası hemen silinir.",
+    "copyright": "© 2026 Hayvan Yüz Testi. Yüklenen fotoğraflar analiz sonrası hemen silinir.",
     "disclaimer": "Bu hizmet yalnızca eğlence amaçlı yapay zeka analizi kullanmaktadır."
   },
   "seo": {
@@ -122,5 +126,31 @@
       "description": "Eşsiz birey, varlığınız basitçe ezici! Hiçbir zaman trendlere boyun eğmeyen kendine özgü bir tarzınız var. İlk başta alışılmadık görünebilirsiniz, ama insanlar sizi ne kadar çok tanırsa o kadar büyülü cazibenize o kadar bağımlı oluyorlar.",
       "celebrities": ["Lady Gaga", "Kanye West", "Björk"]
     }
+  },
+  "share": {
+    "copy": "Kopyala",
+    "copied": "Kopyalandı!",
+    "instagram": "Instagram"
+  },
+  "theme": {
+    "light": "Açık",
+    "dark": "Koyu",
+    "auto": "Otomatik",
+    "lightLabel": "Açık mod",
+    "darkLabel": "Koyu mod",
+    "autoLabel": "Otomatik (saat dilimi)"
+  },
+  "ad": {
+    "sponsored": "sponsorlu"
+  },
+  "notFound": {
+    "title": "Sayfa Bulunamadı",
+    "message": "Aradığınız sayfa mevcut değil.",
+    "goHome": "Ana Sayfaya Git"
+  },
+  "error": {
+    "boundaryTitle": "Bir sorun oluştu",
+    "boundaryMessage": "Beklenmeyen bir hata oluştu. Lütfen tekrar deneyin.",
+    "boundaryRetry": "Sayfayı Yenile"
   }
 }

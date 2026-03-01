@@ -21,11 +21,15 @@
     "analyzing": "Analyse en cours...",
     "detectingFace": "Détection de votre visage",
     "matchingAnimal": "Recherche de votre animal correspondant",
-    "almostDone": "Presque terminé !"
+    "almostDone": "Presque terminé !",
+    "tip1": "Le saviez-vous ? Les chiens peuvent reconnaître plus de 100 visages humains !",
+    "tip2": "Fait amusant : les chats ont plus de 20 vocalisations différentes",
+    "tip3": "L'IA analyse 468 points de repère faciaux pour trouver votre animal"
   },
   "result": {
     "yourAnimal": "Votre animal est",
     "matchRate": "Taux de correspondance",
+    "topMatches": "Meilleurs résultats",
     "personality": "Traits de personnalité",
     "celebrities": "Célébrités similaires",
     "retake": "Refaire le test",
@@ -49,7 +53,7 @@
   },
   "footer": {
     "title": "Test de Visage Animal",
-    "copyright": "© 2025 Test de Visage Animal. Les photos téléchargées sont supprimées immédiatement après l'analyse.",
+    "copyright": "© 2026 Test de Visage Animal. Les photos téléchargées sont supprimées immédiatement après l'analyse.",
     "disclaimer": "Ce service utilise l'analyse IA à des fins de divertissement uniquement."
   },
   "seo": {
@@ -122,5 +126,31 @@
       "description": "Unique et individuel(le), votre présence est tout simplement écrasante ! Vous avez un style distinctif qui ne s'incline jamais devant les tendances. Vous pourriez sembler inhabituel(le) au début, mais plus les gens vous connaissent, plus vous devenez addictivment charmant(e).",
       "celebrities": ["Lady Gaga", "Kanye West", "Björk"]
     }
+  },
+  "share": {
+    "copy": "Copier",
+    "copied": "Copié !",
+    "instagram": "Instagram"
+  },
+  "theme": {
+    "light": "Clair",
+    "dark": "Sombre",
+    "auto": "Auto",
+    "lightLabel": "Mode clair",
+    "darkLabel": "Mode sombre",
+    "autoLabel": "Auto (fuseau horaire)"
+  },
+  "ad": {
+    "sponsored": "sponsorisé"
+  },
+  "notFound": {
+    "title": "Page non trouvée",
+    "message": "La page que vous cherchez n'existe pas.",
+    "goHome": "Retour à l'accueil"
+  },
+  "error": {
+    "boundaryTitle": "Un problème est survenu",
+    "boundaryMessage": "Une erreur inattendue s'est produite. Veuillez réessayer.",
+    "boundaryRetry": "Recharger la page"
   }
 }

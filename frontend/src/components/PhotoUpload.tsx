@@ -50,21 +50,41 @@ export function PhotoUpload({ onFile }: PhotoUploadProps) {
       <Card className="overflow-hidden">
         <CardContent className="flex flex-col gap-4 p-6">
           <div
+            className={cn(
+              "rounded-xl p-[2px] transition-all duration-200",
+              isDragActive
+                ? "bg-primary"
+                : hasError
+                ? "bg-destructive"
+                : "bg-border hover:bg-gradient-to-br hover:from-amber-400 hover:via-red-500 hover:to-pink-500"
+            )}
+          >
+          <div
             {...getRootProps()}
             className={cn(
-              "flex cursor-pointer flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed p-10 text-center transition-colors",
-              isDragActive
-                ? "border-primary bg-primary/5"
-                : "border-border hover:border-primary/50 hover:bg-muted/30",
-              hasError && "border-destructive bg-destructive/5"
+              "flex cursor-pointer flex-col items-center justify-center gap-3 rounded-[10px] border-0 p-10 text-center bg-card transition-all duration-200",
+              isDragActive && "bg-primary/5",
+              hasError && "bg-destructive/5"
             )}
           >
             <input {...getInputProps()} />
             <motion.div
-              animate={isDragActive ? { scale: 1.1 } : { scale: 1 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              animate={
+                isDragActive
+                  ? { scale: [1, 1.15, 1], opacity: [1, 0.7, 1] }
+                  : { scale: 1, opacity: 1 }
+              }
+              transition={
+                isDragActive
+                  ? { duration: 0.8, repeat: Infinity, ease: "easeInOut" }
+                  : { type: "spring", stiffness: 300 }
+              }
             >
-              <Upload className="size-10 text-muted-foreground" />
+              {isDragActive ? (
+                <Upload className="size-10 text-primary" />
+              ) : (
+                <span className="text-5xl leading-none select-none" aria-hidden="true">🐾</span>
+              )}
             </motion.div>
             <div className="space-y-1">
               <p className="text-sm font-medium text-foreground">
@@ -72,9 +92,10 @@ export function PhotoUpload({ onFile }: PhotoUploadProps) {
               </p>
               <p className="text-xs text-muted-foreground">{t("upload.maxSize")}</p>
             </div>
-            <Button type="button" variant="outline" size="sm" onClick={(e) => e.stopPropagation()}>
+            <Button type="button" variant="default" size="sm">
               {t("upload.selectFile")}
             </Button>
+          </div>
           </div>
 
           {hasError && (

@@ -21,11 +21,15 @@
     "analyzing": "Đang phân tích...",
     "detectingFace": "Đang nhận diện khuôn mặt",
     "matchingAnimal": "Đang tìm động vật phù hợp",
-    "almostDone": "Gần xong rồi!"
+    "almostDone": "Gần xong rồi!",
+    "tip1": "Bạn có biết? Chó có thể nhận ra hơn 100 khuôn mặt người!",
+    "tip2": "Thú vị: mèo có hơn 20 kiểu kêu khác nhau",
+    "tip3": "AI đang phân tích 468 điểm đặc trưng trên khuôn mặt để tìm con vật của bạn"
   },
   "result": {
     "yourAnimal": "Động vật của bạn là",
     "matchRate": "Tỷ lệ khớp",
+    "topMatches": "Kết quả hàng đầu",
     "personality": "Đặc điểm tính cách",
     "celebrities": "Người nổi tiếng tương tự",
     "retake": "Làm lại bài kiểm tra",
@@ -49,7 +53,7 @@
   },
   "footer": {
     "title": "Kiểm tra Khuôn mặt Động vật",
-    "copyright": "© 2025 Kiểm tra Khuôn mặt Động vật. Ảnh tải lên sẽ bị xóa ngay sau khi phân tích.",
+    "copyright": "© 2026 Kiểm tra Khuôn mặt Động vật. Ảnh tải lên sẽ bị xóa ngay sau khi phân tích.",
     "disclaimer": "Dịch vụ này sử dụng phân tích AI chỉ cho mục đích giải trí."
   },
   "seo": {
@@ -122,5 +126,31 @@
       "description": "Cá nhân và độc đáo, sự hiện diện của bạn đơn giản là áp đảo! Bạn có phong cách đặc trưng của riêng mình không bao giờ cúi đầu trước xu hướng. Bạn có thể trông bất thường lúc đầu, nhưng càng biết bạn, người ta càng bị mê hoặc bởi sức hút gây nghiện của bạn.",
       "celebrities": ["Lady Gaga", "Kanye West", "Björk"]
     }
+  },
+  "share": {
+    "copy": "Sao chép",
+    "copied": "Đã sao chép!",
+    "instagram": "Instagram"
+  },
+  "theme": {
+    "light": "Sáng",
+    "dark": "Tối",
+    "auto": "Tự động",
+    "lightLabel": "Chế độ sáng",
+    "darkLabel": "Chế độ tối",
+    "autoLabel": "Tự động (múi giờ)"
+  },
+  "ad": {
+    "sponsored": "tài trợ"
+  },
+  "notFound": {
+    "title": "Không tìm thấy trang",
+    "message": "Trang bạn tìm kiếm không tồn tại.",
+    "goHome": "Về trang chủ"
+  },
+  "error": {
+    "boundaryTitle": "Đã xảy ra lỗi",
+    "boundaryMessage": "Đã xảy ra lỗi không mong muốn. Vui lòng thử lại.",
+    "boundaryRetry": "Tải lại trang"
   }
 }

@@ -21,11 +21,15 @@
     "analyzing": "Analisando...",
     "detectingFace": "Detectando seu rosto",
     "matchingAnimal": "Encontrando seu animal correspondente",
-    "almostDone": "Quase lá!"
+    "almostDone": "Quase lá!",
+    "tip1": "Sabia? Os cães conseguem reconhecer mais de 100 rostos humanos!",
+    "tip2": "Curiosidade: os gatos têm mais de 20 vocalizações diferentes",
+    "tip3": "A IA analisa 468 pontos de referência faciais para encontrar o seu animal"
   },
   "result": {
     "yourAnimal": "Seu animal é",
     "matchRate": "Taxa de correspondência",
+    "topMatches": "Melhores correspondências",
     "personality": "Traços de personalidade",
     "celebrities": "Celebridades similares",
     "retake": "Fazer o teste novamente",
@@ -49,7 +53,7 @@
   },
   "footer": {
     "title": "Teste de Rosto Animal",
-    "copyright": "© 2025 Teste de Rosto Animal. As fotos enviadas são deletadas imediatamente após a análise.",
+    "copyright": "© 2026 Teste de Rosto Animal. As fotos enviadas são deletadas imediatamente após a análise.",
     "disclaimer": "Este serviço usa análise de IA apenas para fins de entretenimento."
   },
   "seo": {
@@ -122,5 +126,31 @@
       "description": "Único/a e individual, sua presença é simplesmente avassaladora! Você tem um estilo distintivo que nunca se curva às tendências. Pode parecer incomum no início, mas quanto mais as pessoas te conhecem, mais adictivamente encantador/a você se torna.",
       "celebrities": ["Lady Gaga", "Kanye West", "Björk"]
     }
+  },
+  "share": {
+    "copy": "Copiar",
+    "copied": "Copiado!",
+    "instagram": "Instagram"
+  },
+  "theme": {
+    "light": "Claro",
+    "dark": "Escuro",
+    "auto": "Auto",
+    "lightLabel": "Modo claro",
+    "darkLabel": "Modo escuro",
+    "autoLabel": "Auto (fuso horário)"
+  },
+  "ad": {
+    "sponsored": "patrocinado"
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "message": "A página que você procura não existe.",
+    "goHome": "Ir para o início"
+  },
+  "error": {
+    "boundaryTitle": "Algo deu errado",
+    "boundaryMessage": "Ocorreu um erro inesperado. Tente novamente.",
+    "boundaryRetry": "Recarregar página"
   }
 }

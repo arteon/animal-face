@@ -21,11 +21,15 @@
     "analyzing": "Analysiere...",
     "detectingFace": "Gesicht wird erkannt",
     "matchingAnimal": "Passendes Tier wird gesucht",
-    "almostDone": "Fast fertig!"
+    "almostDone": "Fast fertig!",
+    "tip1": "Wusstest du? Hunde können über 100 menschliche Gesichter erkennen!",
+    "tip2": "Fun Fact: Katzen haben über 20 verschiedene Lautäußerungen",
+    "tip3": "Die KI analysiert 468 Gesichtsmerkmale, um dein Tier zu finden"
   },
   "result": {
     "yourAnimal": "Dein Tier ist",
     "matchRate": "Übereinstimmungsrate",
+    "topMatches": "Top-Übereinstimmungen",
     "personality": "Persönlichkeitsmerkmale",
     "celebrities": "Promi-Übereinstimmungen",
     "retake": "Test wiederholen",
@@ -49,7 +53,7 @@
   },
   "footer": {
     "title": "Tiergesicht-Test",
-    "copyright": "© 2025 Tiergesicht-Test. Hochgeladene Fotos werden nach der Analyse sofort gelöscht.",
+    "copyright": "© 2026 Tiergesicht-Test. Hochgeladene Fotos werden nach der Analyse sofort gelöscht.",
     "disclaimer": "Dieser Dienst verwendet KI-Analyse nur zu Unterhaltungszwecken."
   },
   "seo": {
@@ -122,5 +126,31 @@
       "description": "Einzigartig individuell, deine Präsenz ist schlicht überwältigend! Du hast einen unverwechselbaren Stil ganz eigener Art, der sich nie vor Trends beugt. Du magst anfangs ungewöhnlich wirken, aber je mehr Menschen dich kennenlernen, desto mehr werden sie von deinem Charme süchtig.",
       "celebrities": ["Lady Gaga", "Kanye West", "Björk"]
     }
+  },
+  "share": {
+    "copy": "Kopieren",
+    "copied": "Kopiert!",
+    "instagram": "Instagram"
+  },
+  "theme": {
+    "light": "Hell",
+    "dark": "Dunkel",
+    "auto": "Auto",
+    "lightLabel": "Heller Modus",
+    "darkLabel": "Dunkler Modus",
+    "autoLabel": "Auto (Zeitzone)"
+  },
+  "ad": {
+    "sponsored": "gesponsert"
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "message": "Die gesuchte Seite existiert nicht.",
+    "goHome": "Zur Startseite"
+  },
+  "error": {
+    "boundaryTitle": "Etwas ist schiefgelaufen",
+    "boundaryMessage": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+    "boundaryRetry": "Seite neu laden"
   }
 }

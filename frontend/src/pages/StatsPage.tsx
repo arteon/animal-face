@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo, useCallback, type CSSProperties } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
@@ -32,14 +32,21 @@ export function StatsPage() {
       .finally(() => setLoading(false));
   }, []);
 
-  const sorted = stats
-    ? animals
-        .map((a) => ({ ...a, count: stats.animalCounts[a.id] ?? 0 }))
-        .sort((a, b) => b.count - a.count)
-    : [];
+  const sorted = useMemo(() => {
+    if (!stats) return [];
+    return animals
+      .map((a) => ({ ...a, count: stats.animalCounts[a.id] ?? 0 }))
+      .sort((a, b) => b.count - a.count);
+  }, [stats]);
 
-  const maxCount = sorted[0]?.count ?? 1;
-  const topAnimal = sorted[0];
+  const maxCount = useMemo(() => sorted[0]?.count ?? 1, [sorted]);
+  const topAnimal = useMemo(() => sorted[0], [sorted]);
+
+  const handleRetry = useCallback(() => {
+    setError(false);
+    setLoading(true);
+    getStats().then(setStats).catch(() => setError(true)).finally(() => setLoading(false));
+  }, []);
 
   return (
     <>
@@ -62,15 +69,15 @@ export function StatsPage() {
 
           {loading && (
             <div className="flex justify-center py-20">
-              <span className="text-4xl animate-bounce">🐾</span>
+              <span className="text-4xl animate-bounce" aria-hidden="true">🐾</span>
             </div>
           )}
 
           {!loading && error && (
             <div className="flex flex-col items-center gap-4 py-20 text-center">
-              <span className="text-5xl">😢</span>
+              <span className="text-5xl" aria-hidden="true">😢</span>
               <p className="text-base font-medium text-foreground">{t("common.error")}</p>
-              <Button onClick={() => { setError(false); setLoading(true); getStats().then(setStats).catch(() => setError(true)).finally(() => setLoading(false)); }}>
+              <Button onClick={handleRetry}>
                 {t("common.retry")}
               </Button>
             </div>
@@ -106,7 +113,7 @@ export function StatsPage() {
                     </CardHeader>
                     <CardContent>
                       <div className="flex items-center gap-2">
-                        <span className="text-3xl">{topAnimal.emoji}</span>
+                        <span className="text-3xl" aria-hidden="true">{topAnimal.emoji}</span>
                         <div>
                           <p className="font-bold">
                             {t(`animals.${topAnimal.id}.name`)}
@@ -138,13 +145,14 @@ export function StatsPage() {
                           <span className="w-5 text-xs text-muted-foreground text-right">
                             {rank + 1}
                           </span>
-                          <span className="text-xl">{animal.emoji}</span>
+                          <span className="text-xl" aria-hidden="true">{animal.emoji}</span>
                           <span className="w-20 text-xs font-medium truncate">
                             {t(`animals.${animal.id}.name`)}
                           </span>
                           <Progress
                             value={(animal.count / maxCount) * 100}
                             className="flex-1 h-2"
+                            style={{ "--progress-color": animal.color } as CSSProperties}
                           />
                           <span className="w-14 text-right text-xs font-semibold tabular-nums text-muted-foreground">
                             {animal.count.toLocaleString()}

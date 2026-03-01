@@ -21,11 +21,15 @@
     "analyzing": "分析中...",
     "detectingFace": "顔を検出しています",
     "matchingAnimal": "似た動物を探しています",
-    "almostDone": "もう少し！"
+    "almostDone": "もう少し！",
+    "tip1": "知ってますか？犬は100人以上の人の顔を見分けられます！",
+    "tip2": "豆知識：猫には20種類以上の鳴き声があります",
+    "tip3": "AIが468の顔のランドマークを分析中です"
   },
   "result": {
     "yourAnimal": "あなたの動物顔は",
     "matchRate": "一致率",
+    "topMatches": "マッチ結果 TOP 3",
     "personality": "性格の特徴",
     "celebrities": "似ている有名人",
     "retake": "もう一度テストする",
@@ -49,7 +53,7 @@
   },
   "footer": {
     "title": "動物顔テスト",
-    "copyright": "© 2025 動物顔テスト. アップロードした写真は分析後すぐに削除されます。",
+    "copyright": "© 2026 動物顔テスト. アップロードした写真は分析後すぐに削除されます。",
     "disclaimer": "このサービスはエンターテインメント目的のAI分析です。"
   },
   "seo": {
@@ -122,5 +126,31 @@
       "description": "個性的で存在感だけは圧倒的なあなた！トレンドに流されない自分だけのユニークなスタイルがあります。最初は見慣れないかもしれませんが、知れば知るほどハマる中毒性のある魅力の持ち主です。",
       "celebrities": ["椎名林檎", "米津玄師", "きゃりーぱみゅぱみゅ"]
     }
+  },
+  "share": {
+    "copy": "コピー",
+    "copied": "コピーしました！",
+    "instagram": "Instagram"
+  },
+  "theme": {
+    "light": "ライト",
+    "dark": "ダーク",
+    "auto": "自動",
+    "lightLabel": "ライトモード",
+    "darkLabel": "ダークモード",
+    "autoLabel": "自動（タイムゾーン）"
+  },
+  "ad": {
+    "sponsored": "広告"
+  },
+  "notFound": {
+    "title": "ページが見つかりません",
+    "message": "お探しのページは存在しません。",
+    "goHome": "ホームへ"
+  },
+  "error": {
+    "boundaryTitle": "問題が発生しました",
+    "boundaryMessage": "予期しないエラーが発生しました。もう一度お試しください。",
+    "boundaryRetry": "ページを再読み込み"
   }
 }

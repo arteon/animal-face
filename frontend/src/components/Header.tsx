@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { PawPrint, Menu, X } from "lucide-react";
+import { PawPrint, Menu, X, Home, BarChart3 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -12,10 +12,10 @@ export function Header() {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const navLinks = [
-    { to: "/", label: t("nav.home") },
-    { to: "/stats", label: t("nav.stats") },
-  ];
+  const navLinks = useMemo(() => [
+    { to: "/", label: t("nav.home"), icon: Home },
+    { to: "/stats", label: t("nav.stats"), icon: BarChart3 },
+  ], [t]);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-md">
@@ -33,7 +33,10 @@ export function Header() {
               variant={location.pathname === link.to ? "secondary" : "ghost"}
               size="sm"
             >
-              <Link to={link.to}>{link.label}</Link>
+              <Link to={link.to} className="flex items-center gap-1.5">
+                <link.icon className="size-3.5" />
+                {link.label}
+              </Link>
             </Button>
           ))}
           <div className="ml-2 flex items-center gap-1.5">
@@ -69,7 +72,10 @@ export function Header() {
                   className="justify-start"
                   onClick={() => setMenuOpen(false)}
                 >
-                  <Link to={link.to}>{link.label}</Link>
+                  <Link to={link.to} className="flex items-center gap-2">
+                    <link.icon className="size-4" />
+                    {link.label}
+                  </Link>
                 </Button>
               ))}
               <div className="mt-1 flex items-center gap-1.5">
@@ -80,6 +86,12 @@ export function Header() {
           </motion.div>
         )}
       </AnimatePresence>
+      <div
+        className="h-0.5 w-full"
+        style={{
+          background: "linear-gradient(90deg, #F59E0B, #EF4444, #EC4899, #8B5CF6, #1D4ED8)",
+        }}
+      />
     </header>
   );
 }

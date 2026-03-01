@@ -21,11 +21,15 @@
     "analyzing": "분석 중...",
     "detectingFace": "얼굴을 감지하고 있어요",
     "matchingAnimal": "닮은 동물을 찾고 있어요",
-    "almostDone": "거의 다 됐어요!"
+    "almostDone": "거의 다 됐어요!",
+    "tip1": "알고 계셨나요? 강아지는 100명 이상의 사람 얼굴을 구분할 수 있어요!",
+    "tip2": "재미있는 사실: 고양이는 20가지 이상의 울음소리를 낼 수 있어요",
+    "tip3": "AI가 468개의 얼굴 랜드마크를 분석하여 닮은 동물을 찾고 있어요"
   },
   "result": {
     "yourAnimal": "당신의 동물상은",
     "matchRate": "닮은 정도",
+    "topMatches": "닮은 동물 TOP 3",
     "personality": "성격 특징",
     "celebrities": "닮은 유명인",
     "retake": "다시 테스트하기",
@@ -49,7 +53,7 @@
   },
   "footer": {
     "title": "동물상 테스트",
-    "copyright": "© 2025 동물상 테스트. 업로드한 사진은 분석 후 즉시 삭제됩니다.",
+    "copyright": "© 2026 동물상 테스트. 업로드한 사진은 분석 후 즉시 삭제됩니다.",
     "disclaimer": "이 서비스는 재미를 위한 AI 분석으로, 실제 외모를 평가하지 않습니다."
   },
   "seo": {
@@ -122,5 +126,31 @@
       "description": "개성 넘치고 존재감 하나만큼은 압도적인 당신! 트렌드에 흔들리지 않는 자신만의 독특한 스타일이 있어요. 처음엔 낯설게 느껴질 수 있지만, 알수록 빠져드는 중독성 있는 매력의 소유자입니다.",
       "celebrities": ["이수현", "G-Dragon", "현아"]
     }
+  },
+  "share": {
+    "copy": "복사",
+    "copied": "복사됨!",
+    "instagram": "Instagram"
+  },
+  "theme": {
+    "light": "라이트",
+    "dark": "다크",
+    "auto": "자동",
+    "lightLabel": "라이트 모드",
+    "darkLabel": "다크 모드",
+    "autoLabel": "자동 (시간대)"
+  },
+  "ad": {
+    "sponsored": "광고"
+  },
+  "notFound": {
+    "title": "페이지를 찾을 수 없습니다",
+    "message": "요청하신 페이지가 존재하지 않습니다.",
+    "goHome": "홈으로 이동"
+  },
+  "error": {
+    "boundaryTitle": "문제가 발생했습니다",
+    "boundaryMessage": "예기치 않은 오류가 발생했습니다. 다시 시도해 주세요.",
+    "boundaryRetry": "페이지 새로고침"
   }
 }

@@ -21,11 +21,15 @@
     "analyzing": "Menganalisis...",
     "detectingFace": "Mendeteksi wajah Anda",
     "matchingAnimal": "Mencari hewan yang cocok",
-    "almostDone": "Hampir selesai!"
+    "almostDone": "Hampir selesai!",
+    "tip1": "Tahukah kamu? Anjing bisa mengenali lebih dari 100 wajah manusia!",
+    "tip2": "Fakta seru: kucing punya lebih dari 20 jenis suara berbeda",
+    "tip3": "AI menganalisis 468 titik wajah untuk menemukan hewan yang cocok untukmu"
   },
   "result": {
     "yourAnimal": "Hewan Anda adalah",
     "matchRate": "Tingkat kecocokan",
+    "topMatches": "Kecocokan teratas",
     "personality": "Sifat kepribadian",
     "celebrities": "Selebriti yang mirip",
     "retake": "Tes ulang",
@@ -49,7 +53,7 @@
   },
   "footer": {
     "title": "Tes Wajah Hewan",
-    "copyright": "© 2025 Tes Wajah Hewan. Foto yang diunggah dihapus segera setelah analisis.",
+    "copyright": "© 2026 Tes Wajah Hewan. Foto yang diunggah dihapus segera setelah analisis.",
     "disclaimer": "Layanan ini menggunakan analisis AI hanya untuk tujuan hiburan."
   },
   "seo": {
@@ -122,5 +126,31 @@
       "description": "Unik dan individual, kehadiranmu sungguh luar biasa! Kamu memiliki gaya khas yang tidak pernah tunduk pada tren. Kamu mungkin tampak tidak biasa pada awalnya, tetapi semakin orang mengenalmu, semakin mereka terpesona oleh pesonamu yang adiktif.",
       "celebrities": ["Lady Gaga", "Kanye West", "Björk"]
     }
+  },
+  "share": {
+    "copy": "Salin",
+    "copied": "Tersalin!",
+    "instagram": "Instagram"
+  },
+  "theme": {
+    "light": "Terang",
+    "dark": "Gelap",
+    "auto": "Otomatis",
+    "lightLabel": "Mode terang",
+    "darkLabel": "Mode gelap",
+    "autoLabel": "Otomatis (zona waktu)"
+  },
+  "ad": {
+    "sponsored": "disponsori"
+  },
+  "notFound": {
+    "title": "Halaman Tidak Ditemukan",
+    "message": "Halaman yang Anda cari tidak ada.",
+    "goHome": "Ke Beranda"
+  },
+  "error": {
+    "boundaryTitle": "Terjadi Kesalahan",
+    "boundaryMessage": "Terjadi kesalahan yang tidak terduga. Silakan coba lagi.",
+    "boundaryRetry": "Muat Ulang Halaman"
   }
 }

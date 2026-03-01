@@ -41,7 +41,7 @@ export function LanguageToggle() {
   }, []);
 
   const handleSelect = (code: string) => {
-    i18n.changeLanguage(code);
+    i18n.changeLanguage(code).catch(() => {});
     setOpen(false);
   };
 

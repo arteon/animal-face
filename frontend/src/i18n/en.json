@@ -21,11 +21,15 @@
     "analyzing": "Analyzing...",
     "detectingFace": "Detecting your face",
     "matchingAnimal": "Finding your animal match",
-    "almostDone": "Almost there!"
+    "almostDone": "Almost there!",
+    "tip1": "Did you know? Dogs can recognize up to 100 human faces!",
+    "tip2": "Fun fact: Cats have over 20 different vocalizations",
+    "tip3": "AI analyzes 468 facial landmarks to find your match"
   },
   "result": {
     "yourAnimal": "Your animal is",
     "matchRate": "Match Rate",
+    "topMatches": "Top Matches",
     "personality": "Personality Traits",
     "celebrities": "Celebrity Matches",
     "retake": "Take the Test Again",
@@ -49,7 +53,7 @@
   },
   "footer": {
     "title": "Animal Face Test",
-    "copyright": "© 2025 Animal Face Test. Uploaded photos are deleted immediately after analysis.",
+    "copyright": "© 2026 Animal Face Test. Uploaded photos are deleted immediately after analysis.",
     "disclaimer": "This service uses AI analysis for entertainment purposes only."
   },
   "seo": {
@@ -122,5 +126,31 @@
       "description": "Uniquely individual, your presence is simply overwhelming! You have a distinctive style all your own that never bows to trends. You might seem unusual at first, but the more people get to know you, the more addictively charming you become.",
       "celebrities": ["Lady Gaga", "Kanye West", "Björk"]
     }
+  },
+  "share": {
+    "copy": "Copy",
+    "copied": "Copied!",
+    "instagram": "Instagram"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "auto": "Auto",
+    "lightLabel": "Light mode",
+    "darkLabel": "Dark mode",
+    "autoLabel": "Auto (timezone)"
+  },
+  "ad": {
+    "sponsored": "sponsored"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "message": "The page you're looking for doesn't exist.",
+    "goHome": "Go Home"
+  },
+  "error": {
+    "boundaryTitle": "Something went wrong",
+    "boundaryMessage": "An unexpected error occurred. Please try again.",
+    "boundaryRetry": "Reload Page"
   }
 }

@@ -26,6 +26,14 @@ def _response(status: int, body: dict) -> dict:
     }
 
 
+def options(event: dict, context) -> dict:
+    return {
+        "statusCode": 204,
+        "headers": CORS_HEADERS,
+        "body": "",
+    }
+
+
 def _extract_image_from_multipart(body: bytes, content_type: str) -> bytes:
     boundary_match = re.search(r"boundary=([^\s;]+)", content_type)
     if not boundary_match:
@@ -71,10 +79,28 @@ def analyze(event: dict, context) -> dict:
 
     content_type = ""
     headers = event.get("headers") or {}
+    client_ip = ""
+    user_agent = ""
+    accept_language = ""
+    referer = ""
+    country = ""
     for key, value in headers.items():
-        if key.lower() == "content-type":
+        lower_key = key.lower()
+        if lower_key == "content-type":
             content_type = value
-            break
+        elif lower_key == "x-forwarded-for":
+            client_ip = value.split(",")[0].strip()
+        elif lower_key == "user-agent":
+            user_agent = value
+        elif lower_key == "accept-language":
+            accept_language = value[:128]
+        elif lower_key == "referer":
+            referer = value[:512]
+        elif lower_key == "cloudfront-viewer-country":
+            country = value
+
+    if not client_ip:
+        client_ip = event.get("requestContext", {}).get("identity", {}).get("sourceIp", "")
 
     if "multipart/form-data" in content_type:
         try:
@@ -96,7 +122,14 @@ def analyze(event: dict, context) -> dict:
     top_animal = matches[0]["id"] if matches else "unknown"
 
     try:
-        db.save_result(top_animal)
+        db.save_result(
+            top_animal,
+            client_ip=client_ip,
+            user_agent=user_agent,
+            accept_language=accept_language,
+            referer=referer,
+            country=country,
+        )
     except Exception:
         logger.warning("Failed to save analysis result for animal: %s", top_animal, exc_info=True)
 
@@ -115,5 +148,6 @@ def stats(event: dict, context) -> dict:
             "animalCounts": {row["animal_id"]: row["count"] for row in raw["per_animal"]},
         }
     except Exception:
+        logger.exception("Failed to retrieve statistics")
         return _response(500, {"error": "Failed to retrieve statistics."})
     return _response(200, result)

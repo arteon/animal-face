@@ -1,9 +1,10 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import "@/i18n";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { NotFoundPage } from "@/pages/NotFoundPage";
 
 const HomePage = lazy(() =>
   import("@/pages/HomePage").then((m) => ({ default: m.HomePage }))
@@ -19,18 +20,21 @@ function App() {
         <div className="flex min-h-screen flex-col">
           <Header />
           <main className="flex-1">
-            <Suspense
-              fallback={
-                <div className="flex items-center justify-center py-20">
-                  <span className="text-4xl animate-bounce">🐾</span>
-                </div>
-              }
-            >
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/stats" element={<StatsPage />} />
-              </Routes>
-            </Suspense>
+            <ErrorBoundary>
+              <Suspense
+                fallback={
+                  <div className="flex items-center justify-center py-20">
+                    <span className="text-4xl animate-bounce" aria-hidden="true">🐾</span>
+                  </div>
+                }
+              >
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/stats" element={<StatsPage />} />
+                  <Route path="*" element={<NotFoundPage />} />
+                </Routes>
+              </Suspense>
+            </ErrorBoundary>
           </main>
           <Footer />
         </div>

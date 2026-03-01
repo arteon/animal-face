@@ -3,21 +3,33 @@ import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
 import en from "./en.json";
-import ko from "./ko.json";
-import ja from "./ja.json";
-import zhCN from "./zh-CN.json";
-import zhTW from "./zh-TW.json";
-import es from "./es.json";
-import fr from "./fr.json";
-import de from "./de.json";
-import pt from "./pt.json";
-import th from "./th.json";
-import vi from "./vi.json";
-import id from "./id.json";
-import hi from "./hi.json";
-import ar from "./ar.json";
-import ru from "./ru.json";
-import tr from "./tr.json";
+
+const loaders: Record<string, () => Promise<{ default: Record<string, unknown> }>> = {
+  ko: () => import("./ko.json"),
+  ja: () => import("./ja.json"),
+  "zh-CN": () => import("./zh-CN.json"),
+  "zh-TW": () => import("./zh-TW.json"),
+  es: () => import("./es.json"),
+  fr: () => import("./fr.json"),
+  de: () => import("./de.json"),
+  pt: () => import("./pt.json"),
+  th: () => import("./th.json"),
+  vi: () => import("./vi.json"),
+  id: () => import("./id.json"),
+  hi: () => import("./hi.json"),
+  ar: () => import("./ar.json"),
+  ru: () => import("./ru.json"),
+  tr: () => import("./tr.json"),
+};
+
+async function loadLanguage(lng: string) {
+  const base = lng.split("-").length === 2 && loaders[lng] ? lng : lng.split("-")[0];
+  if (base === "en" || i18n.hasResourceBundle(base, "translation")) return;
+  const loader = loaders[base];
+  if (!loader) return;
+  const mod = await loader();
+  i18n.addResourceBundle(base, "translation", mod.default, true, true);
+}
 
 i18n
   .use(LanguageDetector)
@@ -25,21 +37,6 @@ i18n
   .init({
     resources: {
       en: { translation: en },
-      ko: { translation: ko },
-      ja: { translation: ja },
-      "zh-CN": { translation: zhCN },
-      "zh-TW": { translation: zhTW },
-      es: { translation: es },
-      fr: { translation: fr },
-      de: { translation: de },
-      pt: { translation: pt },
-      th: { translation: th },
-      vi: { translation: vi },
-      id: { translation: id },
-      hi: { translation: hi },
-      ar: { translation: ar },
-      ru: { translation: ru },
-      tr: { translation: tr },
     },
     fallbackLng: "en",
     defaultNS: "translation",
@@ -50,6 +47,11 @@ i18n
     interpolation: {
       escapeValue: false,
     },
+  })
+  .then(() => {
+    loadLanguage(i18n.language);
   });
+
+i18n.on("languageChanged", loadLanguage);
 
 export default i18n;

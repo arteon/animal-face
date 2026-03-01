@@ -214,6 +214,12 @@ FEATURE_WEIGHTS = {
 
 MAX_IMAGE_PIXELS = 4096 * 4096  # ~16 megapixels
 
+_feature_keys = list(FEATURE_WEIGHTS.keys())
+_weights = np.array([FEATURE_WEIGHTS[k] for k in _feature_keys])
+_animal_ids = list(ANIMALS.keys())
+_profile_matrix = np.array([[ANIMALS[aid]["profile"][k] for k in _feature_keys] for aid in _animal_ids])
+_norm_matrix = np.where(_profile_matrix != 0, _profile_matrix, 1.0)
+
 _face_mesh = None
 
 
@@ -244,6 +250,13 @@ def extract_features(image_bytes: bytes) -> dict:
     if image.width * image.height > MAX_IMAGE_PIXELS:
         raise ValueError("Image resolution too high. Maximum is 4096x4096 pixels.")
 
+    # Downsample large images for faster processing
+    MAX_DIM = 1024
+    if image.width > MAX_DIM or image.height > MAX_DIM:
+        ratio = min(MAX_DIM / image.width, MAX_DIM / image.height)
+        new_size = (int(image.width * ratio), int(image.height * ratio))
+        image = image.resize(new_size, Image.Resampling.LANCZOS)
+
     img_array = np.array(image)
     img_h, img_w = img_array.shape[:2]
 
@@ -258,11 +271,17 @@ def extract_features(image_bytes: bytes) -> dict:
     def pt(idx):
         return _landmark_point(lm, idx, img_w, img_h)
 
-    # Face bounding box
-    xs = [l.x * img_w for l in lm]
-    ys = [l.y * img_h for l in lm]
-    face_width = max(xs) - min(xs)
-    face_height = max(ys) - min(ys)
+    # Face bounding box — single-pass min/max
+    min_x = min_y = float('inf')
+    max_x = max_y = float('-inf')
+    for l in lm:
+        px, py = l.x * img_w, l.y * img_h
+        if px < min_x: min_x = px
+        if px > max_x: max_x = px
+        if py < min_y: min_y = py
+        if py > max_y: max_y = py
+    face_width = max_x - min_x
+    face_height = max_y - min_y
 
     # Eye landmarks (MediaPipe 468-point FaceMesh)
     # Left eye outer/inner corners: 33, 133 | right eye: 362, 263
@@ -291,21 +310,18 @@ def extract_features(image_bytes: bytes) -> dict:
                     (right_eye_outer[1] + right_eye_inner[1]) / 2)
     eye_distance = _dist(left_center, right_center)
 
-    # Nose: tip 1, bridge 6, bottom 2, left ala 98, right ala 327
+    # Nose: tip 1, bridge 6, left ala 98, right ala 327
     nose_tip = pt(1)
     nose_bridge = pt(6)
-    nose_bottom = pt(2)
     nose_left = pt(98)
     nose_right = pt(327)
 
     nose_length = _dist(nose_bridge, nose_tip)
     nose_width = _dist(nose_left, nose_right)
 
-    # Lips: top center 13, bottom center 14, left corner 61, right corner 291
+    # Lips: top center 13, bottom center 14
     lip_top = pt(13)
     lip_bottom = pt(14)
-    lip_left = pt(61)
-    lip_right = pt(291)
 
     lip_height = _dist(lip_top, lip_bottom)
 
@@ -324,7 +340,7 @@ def extract_features(image_bytes: bytes) -> dict:
     brow_left = pt(105)
     brow_right = pt(334)
     brow_y = (brow_left[1] + brow_right[1]) / 2
-    face_top_y = min(ys)
+    face_top_y = min_y
     forehead_h = brow_y - face_top_y
 
     safe_fw = face_width if face_width > 0 else 1.0
@@ -346,42 +362,29 @@ def extract_features(image_bytes: bytes) -> dict:
 
 
 def match_animal(features: dict) -> list[dict]:
-    feature_keys = list(FEATURE_WEIGHTS.keys())
-    weights = np.array([FEATURE_WEIGHTS[k] for k in feature_keys])
+    feature_vec = np.array([features.get(k, 0) for k in _feature_keys])
 
-    scores = {}
-    for animal_id, animal_data in ANIMALS.items():
-        profile = animal_data["profile"]
-        diff = np.array([
-            features.get(k, profile[k]) - profile[k]
-            for k in feature_keys
-        ])
-        # Normalise by the profile value to make ratio-agnostic
-        norm = np.array([profile[k] if profile[k] != 0 else 1.0 for k in feature_keys])
-        rel_diff = diff / norm
-        distance = float(np.sqrt(np.sum(weights * rel_diff ** 2)))
-        scores[animal_id] = distance
+    rel_diff = (feature_vec - _profile_matrix) / _norm_matrix
+    distances = np.sqrt(np.sum(_weights * rel_diff ** 2, axis=1))
 
-    # Convert distances to similarity scores (lower distance = higher similarity)
-    max_dist = max(scores.values()) if scores else 1.0
-    raw_similarities = {aid: (max_dist - d) for aid, d in scores.items()}
+    max_dist = distances.max()
+    raw_sim = max_dist - distances
 
-    # Ensure non-negative
-    min_sim = min(raw_similarities.values())
+    min_sim = raw_sim.min()
     if min_sim < 0:
-        raw_similarities = {aid: v - min_sim for aid, v in raw_similarities.items()}
+        raw_sim -= min_sim
 
-    total = sum(raw_similarities.values()) or 1.0
-    percentages = {aid: (v / total) * 100 for aid, v in raw_similarities.items()}
+    total = raw_sim.sum() or 1.0
+    percentages = (raw_sim / total) * 100
 
-    sorted_animals = sorted(percentages.items(), key=lambda x: x[1], reverse=True)
+    sorted_indices = np.argsort(-percentages)
 
     return [
         {
-            "id":         animal_id,
-            "name":       ANIMALS[animal_id]["name"],
-            "emoji":      ANIMALS[animal_id]["emoji"],
-            "percentage": round(pct, 2),
+            "id":         _animal_ids[i],
+            "name":       ANIMALS[_animal_ids[i]]["name"],
+            "emoji":      ANIMALS[_animal_ids[i]]["emoji"],
+            "percentage": round(float(percentages[i]), 2),
         }
-        for animal_id, pct in sorted_animals
+        for i in sorted_indices
     ]

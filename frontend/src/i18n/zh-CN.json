@@ -21,11 +21,15 @@
     "analyzing": "分析中...",
     "detectingFace": "正在检测你的面部",
     "matchingAnimal": "正在寻找你的动物匹配",
-    "almostDone": "快好了！"
+    "almostDone": "快好了！",
+    "tip1": "你知道吗？狗狗能识别100多张人类面孔！",
+    "tip2": "趣味知识：猫有超过20种不同的叫声",
+    "tip3": "AI正在分析468个面部特征点来寻找你的动物匹配"
   },
   "result": {
     "yourAnimal": "你的动物脸型是",
     "matchRate": "匹配度",
+    "topMatches": "最匹配 TOP 3",
     "personality": "性格特点",
     "celebrities": "相似明星",
     "retake": "重新测试",
@@ -49,7 +53,7 @@
   },
   "footer": {
     "title": "动物脸型测试",
-    "copyright": "© 2025 动物脸型测试. 上传的照片在分析后立即删除。",
+    "copyright": "© 2026 动物脸型测试. 上传的照片在分析后立即删除。",
     "disclaimer": "本服务使用AI分析，仅供娱乐目的。"
   },
   "seo": {
@@ -122,5 +126,31 @@
       "description": "独特个性，你的存在感简直压倒一切！你有着独特的风格，从不向潮流低头。一开始可能显得不寻常，但越了解你，就越被你令人着迷的魅力所吸引。",
       "celebrities": ["张曼玉", "陈奕迅", "那英"]
     }
+  },
+  "share": {
+    "copy": "复制",
+    "copied": "已复制！",
+    "instagram": "Instagram"
+  },
+  "theme": {
+    "light": "浅色",
+    "dark": "深色",
+    "auto": "自动",
+    "lightLabel": "浅色模式",
+    "darkLabel": "深色模式",
+    "autoLabel": "自动（时区）"
+  },
+  "ad": {
+    "sponsored": "赞助"
+  },
+  "notFound": {
+    "title": "页面未找到",
+    "message": "您访问的页面不存在。",
+    "goHome": "返回首页"
+  },
+  "error": {
+    "boundaryTitle": "出现了问题",
+    "boundaryMessage": "发生了意外错误，请重试。",
+    "boundaryRetry": "重新加载"
   }
 }

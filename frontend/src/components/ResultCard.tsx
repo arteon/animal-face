@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo, type CSSProperties } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,6 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { animals } from "@/data/animals";
 import type { AnalysisResult } from "@/lib/api";
+
+const animalMap = new Map(animals.map((a) => [a.id, a]));
 
 interface ResultCardProps {
   result: AnalysisResult;
@@ -43,11 +45,11 @@ const itemVariants = {
 
 export function ResultCard({ result, previewUrl }: ResultCardProps) {
   const { t } = useTranslation();
-  const animalInfo = animals.find((a) => a.id === result.topAnimal);
+  const animalInfo = animalMap.get(result.topAnimal);
   const topMatch = result.matches.find((m) => m.id === result.topAnimal);
   const topPct = topMatch?.percentage ?? 0;
   const countedPct = useCountUp(topPct);
-  const top3 = result.matches.slice(0, 3);
+  const top3 = useMemo(() => result.matches.slice(0, 3), [result.matches]);
 
   if (!animalInfo) return null;
 
@@ -83,6 +85,7 @@ export function ResultCard({ result, previewUrl }: ResultCardProps) {
                 <span
                   className="absolute -bottom-2 -right-2 flex size-9 items-center justify-center rounded-full text-xl shadow-md"
                   style={{ backgroundColor: animalInfo.color + "22" }}
+                  aria-hidden="true"
                 >
                   {animalInfo.emoji}
                 </span>
@@ -122,14 +125,14 @@ export function ResultCard({ result, previewUrl }: ResultCardProps) {
           >
             <motion.div variants={itemVariants} className="space-y-2">
               <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                {t("result.matchRate")}
+                {t("result.topMatches")}
               </h3>
               <div className="space-y-2">
                 {top3.map((match) => {
-                  const info = animals.find((a) => a.id === match.id);
+                  const info = animalMap.get(match.id);
                   return (
                     <div key={match.id} className="flex items-center gap-2">
-                      <span className="text-lg">{match.emoji}</span>
+                      <span className="text-lg" aria-hidden="true">{match.emoji}</span>
                       <span className="w-20 text-xs font-medium truncate">
                         {t(`animals.${match.id}.name`)}
                       </span>
@@ -139,7 +142,7 @@ export function ResultCard({ result, previewUrl }: ResultCardProps) {
                         style={
                           {
                             "--progress-color": info?.color ?? "#6B7280",
-                          } as React.CSSProperties
+                          } as CSSProperties
                         }
                       />
                       <span className="w-9 text-right text-xs font-semibold tabular-nums">
@@ -165,7 +168,9 @@ export function ResultCard({ result, previewUrl }: ResultCardProps) {
                 {t("result.celebrities")}
               </h3>
               <div className="flex flex-wrap gap-2">
-                {(t(`animals.${animalInfo.id}.celebrities`, { returnObjects: true }) as string[]).map(
+                {(
+                  (t(`animals.${animalInfo.id}.celebrities`, { returnObjects: true }) as string[] | undefined) ?? []
+                ).map(
                   (celebrity) => (
                     <Badge
                       key={celebrity}
