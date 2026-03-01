@@ -21,9 +21,6 @@ Thumbs.db
 *.swp
 *.swo
 
-# MCP
-.mcp.json
-
 # Python
 __pycache__/
 *.pyc
